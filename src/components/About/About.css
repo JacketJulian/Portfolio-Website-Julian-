@@ -1,0 +1,32 @@
+.about-container {
+  background: linear-gradient(to right, #f5f5dc, #f5deb3); /* Tan gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 30px;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.about-content {
+  z-index: 3;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-content h2 {
+  font-size: 48px;
+  color: #3B3B3B;
+  margin-bottom: 24px;
+}
+
+.about-content p {
+  font-size: 20px;
+  color: #3B3B3B;
+  text-align: center;
+  max-width: 800px;
+  line-height: 1.6;
+}

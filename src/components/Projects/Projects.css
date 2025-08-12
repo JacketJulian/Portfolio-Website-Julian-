@@ -1,0 +1,68 @@
+.projects-container {
+  background: linear-gradient(to right, #f5f5dc, #f5deb3); /* Tan gradient */
+  padding: 100px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects-heading {
+  font-size: 48px;
+  color: #3B3B3B;
+  margin-bottom: 48px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.project-card {
+  background: #fff;
+  padding: 0; /* Remove padding */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.project-card h3 {
+  font-size: 24px;
+  color: #3B3B3B;
+  margin: 20px 0 16px 0; /* Add margin */
+}
+
+.project-card p {
+  font-size: 16px;
+  color: #3B3B3B;
+  margin-bottom: 24px;
+  padding: 0 20px;
+}
+
+.project-links a {
+  color: #A0522D; /* Sienna */
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  padding-bottom: 20px;
+  display: inline-block;
+}
+
+.project-links a:hover {
+  color: #3B3B3B;
+}
