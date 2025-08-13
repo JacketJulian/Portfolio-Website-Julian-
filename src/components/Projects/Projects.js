@@ -8,7 +8,7 @@ const Projects = () => {
 
   return (
     <div ref={ref} className={`projects-container fade-in-section ${inView ? 'is-visible' : ''}`} id="projects" data-testid="projects-section">
-      <h2 className="projects-heading">{portfolioData.projects.title}</h2>
+      <h1 className="projects-heading">{portfolioData.projects.title}</h1>
       <div className="projects-grid">
         {portfolioData.projects.projects.map((project, index) => (
           <div className="project-card" key={index}>

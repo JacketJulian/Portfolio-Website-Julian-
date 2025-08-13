@@ -17,10 +17,11 @@
   text-align: center;
 }
 
-.contact-content h2 {
+.contact-content h1 {
   font-size: 48px;
   color: #3B3B3B;
   margin-bottom: 24px;
+  font-weight: bold;
 }
 
 .contact-content p {

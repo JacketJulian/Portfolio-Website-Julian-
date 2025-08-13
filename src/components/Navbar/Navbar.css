@@ -12,7 +12,7 @@
 }
 
 .navbar.active {
-  background: #f5f5dc; /* Tan background on scroll */
+  background: #87CEEB; /* SkyBlue background on scroll */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 

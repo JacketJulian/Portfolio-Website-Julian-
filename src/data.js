@@ -1,6 +1,7 @@
 export const portfolioData = {
   name: "Julian Mangual",
   title: "Software Engineer | Full-Stack Developer",
+  profileImage: "https://via.placeholder.com/300", // Add your profile image URL here
   about: {
     title: "About Me",
     description: "I am a passionate software engineer with a strong background in full-stack development. I have experience in building web applications using modern technologies like React, Node.js, and more. I am a quick learner and always eager to take on new challenges. In my free time, I enjoy working on personal projects and exploring new technologies."

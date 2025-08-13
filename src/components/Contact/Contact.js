@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <div ref={ref} className={`contact-container fade-in-section ${inView ? 'is-visible' : ''}`} id="contact" data-testid="contact-section">
       <div className="contact-content">
-        <h2>{portfolioData.contact.title}</h2>
+        <h1>{portfolioData.contact.title}</h1>
         <p>{portfolioData.contact.description}</p>
         <div className="contact-info">
           <a href={`mailto:${portfolioData.contact.email}`} className="contact-email">{portfolioData.contact.email}</a>

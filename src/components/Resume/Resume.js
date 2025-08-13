@@ -9,7 +9,7 @@ const Resume = () => {
   return (
     <div ref={ref} className={`resume-container fade-in-section ${inView ? 'is-visible' : ''}`} id="resume" data-testid="resume-section">
       <div className="resume-content">
-        <h2>{portfolioData.resume.title}</h2>
+        <h1>{portfolioData.resume.title}</h1>
         <p>{portfolioData.resume.description}</p>
         <a href={portfolioData.resume.resumeLink} className="resume-button">Download Resume</a>
       </div>

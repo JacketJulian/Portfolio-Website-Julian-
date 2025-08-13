@@ -17,10 +17,11 @@
   text-align: center;
 }
 
-.resume-content h2 {
+.resume-content h1 {
   font-size: 48px;
   color: #3B3B3B;
   margin-bottom: 24px;
+  font-weight: bold;
 }
 
 .resume-content p {

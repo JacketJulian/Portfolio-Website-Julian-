@@ -9,6 +9,7 @@
   font-size: 48px;
   color: #3B3B3B;
   margin-bottom: 48px;
+  font-weight: bold;
 }
 
 .projects-grid {
@@ -53,7 +54,7 @@
 }
 
 .project-links a {
-  color: #A0522D; /* Sienna */
+  color: #4682B4; /* SteelBlue */
   text-decoration: none;
   margin: 0 10px;
   font-weight: bold;
