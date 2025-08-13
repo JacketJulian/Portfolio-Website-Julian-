@@ -20,14 +20,12 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./portfolio-website
 
       - name: Build
         run: npm run build
-        working-directory: ./portfolio-website
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./portfolio-website/build
+          publish_dir: ./build
