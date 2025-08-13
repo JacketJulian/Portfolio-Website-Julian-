@@ -19,14 +19,12 @@
 
 .contact-content h1 {
   font-size: 48px;
-  color: #3B3B3B;
   margin-bottom: 24px;
   font-weight: bold;
 }
 
 .contact-content p {
   font-size: 20px;
-  color: #3B3B3B;
   max-width: 800px;
   line-height: 1.6;
   margin-bottom: 48px;
@@ -40,7 +38,6 @@
 
 .contact-email {
   font-size: 24px;
-  color: #4682B4; /* SteelBlue */
   text-decoration: none;
   margin-bottom: 24px;
   transition: color 0.3s ease;
@@ -51,7 +48,6 @@
 }
 
 .social-links a {
-  color: #3B3B3B;
   text-decoration: none;
   margin: 0 15px;
   font-size: 18px;

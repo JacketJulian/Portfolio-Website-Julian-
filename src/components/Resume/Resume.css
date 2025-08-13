@@ -19,22 +19,18 @@
 
 .resume-content h1 {
   font-size: 48px;
-  color: #3B3B3B;
   margin-bottom: 24px;
   font-weight: bold;
 }
 
 .resume-content p {
   font-size: 20px;
-  color: #3B3B3B;
   max-width: 800px;
   line-height: 1.6;
   margin-bottom: 48px;
 }
 
 .resume-button {
-  background-color: #4682B4; /* SteelBlue */
-  color: #fff;
   padding: 15px 30px;
   border: none;
   border-radius: 5px;

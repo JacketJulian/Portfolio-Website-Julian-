@@ -12,7 +12,6 @@
 }
 
 .navbar.active {
-  background: #87CEEB; /* SkyBlue background on scroll */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -27,7 +26,6 @@
 }
 
 .navbar-logo {
-  color: #3B3B3B;
   justify-self: start;
   cursor: pointer;
   text-decoration: none;
@@ -51,7 +49,6 @@
 }
 
 .nav-links {
-  color: #3B3B3B;
   display: flex;
   align-items: center;
   text-decoration: none;

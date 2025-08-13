@@ -2,6 +2,24 @@ export const portfolioData = {
   name: "Julian Mangual",
   title: "Software Engineer | Full-Stack Developer",
   profileImage: "https://via.placeholder.com/300", // Add your profile image URL here
+  navLinks: [
+    {
+      name: "About",
+      url: "about"
+    },
+    {
+      name: "Projects",
+      url: "projects"
+    },
+    {
+      name: "Resume",
+      url: "resume"
+    },
+    {
+      name: "Contact",
+      url: "contact"
+    }
+  ],
   about: {
     title: "About Me",
     description: "I am a passionate software engineer with a strong background in full-stack development. I have experience in building web applications using modern technologies like React, Node.js, and more. I am a quick learner and always eager to take on new challenges. In my free time, I enjoy working on personal projects and exploring new technologies."
@@ -14,28 +32,35 @@ export const portfolioData = {
         description: 'This is a brief description of Project One. It showcases my skills in React and Node.js.',
         demoLink: '#',
         githubLink: '#',
-        image: 'https://via.placeholder.com/300x200'
+        image: 'https://via.placeholder.com/300x200',
+        liveDemoText: "Live Demo",
+        githubText: "GitHub"
       },
       {
         title: 'Project Two',
         description: 'This is a brief description of Project Two. It was built using Python and Django.',
         demoLink: '#',
         githubLink: '#',
-        image: 'https://via.placeholder.com/300x200'
+        image: 'https://via.placeholder.com/300x200',
+        liveDemoText: "Live Demo",
+        githubText: "GitHub"
       },
       {
         title: 'Project Three',
         description: 'This is a brief description of Project Three. It is a mobile app developed with React Native.',
         demoLink: '#',
         githubLink: '#',
-        image: 'https://via.placeholder.com/300x200'
+        image: 'https://via.placeholder.com/300x200',
+        liveDemoText: "Live Demo",
+        githubText: "GitHub"
       }
     ]
   },
   resume: {
     title: "My Resume",
     description: "You can view or download my resume by clicking the button below.",
-    resumeLink: "#"
+    resumeLink: "#",
+    downloadText: "Download Resume"
   },
   contact: {
     title: "Contact Me",
@@ -51,5 +76,14 @@ export const portfolioData = {
         url: "#"
       }
     ]
+  },
+  colors: {
+    primary: '#3B3B3B',
+    secondary: '#4682B4',
+    tertiary: '#191970',
+    white: '#fff',
+    skyBlue: '#87CEEB',
+    lavender: '#E6E6FA',
+    lightBlue: '#ADD8E6'
   }
 };

@@ -27,35 +27,29 @@
 
 .intro-name {
   font-size: 60px; /* Larger for name */
-  color: #3B3B3B;
   margin-bottom: 10px;
   font-weight: bold;
 }
 
 .intro-title {
   font-size: 30px; /* Larger for title */
-  color: #4682B4; /* SteelBlue for title */
   margin-bottom: 40px;
 }
 
 .about-text-content h2 {
   font-size: 48px;
-  color: #3B3B3B;
   margin-bottom: 24px;
   font-weight: bold;
 }
 
 .about-text-content p {
   font-size: 20px;
-  color: #3B3B3B;
   line-height: 1.6;
 }
 
 .about-image-placeholder {
   width: 300px;
   height: 300px;
-  background-color: #fff; /* White placeholder */
-  border: 5px solid #fff; /* White border */
   border-radius: 10px;
   flex-shrink: 0; /* Prevent shrinking */
   overflow: hidden; /* Hide overflowing image parts */
