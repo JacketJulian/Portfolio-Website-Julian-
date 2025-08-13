@@ -1,10 +1,13 @@
 import React from 'react';
 import { portfolioData } from '../../data';
 import './Projects.css';
+import { useInView } from '../../hooks/useInView';
 
 const Projects = () => {
+  const [ref, inView] = useInView();
+
   return (
-    <div className="projects-container" id="projects" data-testid="projects-section">
+    <div ref={ref} className={`projects-container fade-in-section ${inView ? 'is-visible' : ''}`} id="projects" data-testid="projects-section">
       <h2 className="projects-heading">{portfolioData.projects.title}</h2>
       <div className="projects-grid">
         {portfolioData.projects.projects.map((project, index) => (

@@ -1,5 +1,4 @@
 .resume-container {
-  background: linear-gradient(to right, #f5f5dc, #f5deb3); /* Tan gradient */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,7 +32,7 @@
 }
 
 .resume-button {
-  background-color: #A0522D; /* Sienna */
+  background-color: #4682B4; /* SteelBlue */
   color: #fff;
   padding: 15px 30px;
   border: none;
@@ -45,5 +44,5 @@
 }
 
 .resume-button:hover {
-  background-color: #3B3B3B;
+  background-color: #191970; /* MidnightBlue */
 }

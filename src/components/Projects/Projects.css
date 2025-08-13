@@ -1,5 +1,4 @@
 .projects-container {
-  background: linear-gradient(to right, #f5f5dc, #f5deb3); /* Tan gradient */
   padding: 100px 30px;
   display: flex;
   flex-direction: column;
@@ -64,5 +63,5 @@
 }
 
 .project-links a:hover {
-  color: #3B3B3B;
+  color: #191970; /* MidnightBlue */
 }

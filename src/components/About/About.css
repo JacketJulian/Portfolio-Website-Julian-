@@ -1,5 +1,4 @@
 .about-container {
-  background: linear-gradient(to right, #f5f5dc, #f5deb3); /* Tan gradient */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,20 +12,49 @@
   z-index: 3;
   max-width: 1200px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row; /* Changed to row for two columns */
+  justify-content: space-around; /* Distribute space */
+  align-items: center; /* Vertically center items */
+  width: 100%; /* Ensure it takes full width */
 }
 
-.about-content h2 {
+.about-text-content {
+  flex: 1; /* Take up available space */
+  max-width: 600px; /* Limit text width */
+  text-align: center; /* Center-justify text */
+  margin-left: 50px; /* Space between image and text */
+}
+
+.intro-name {
+  font-size: 60px; /* Larger for name */
+  color: #3B3B3B;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.intro-title {
+  font-size: 30px; /* Larger for title */
+  color: #4682B4; /* SteelBlue for title */
+  margin-bottom: 40px;
+}
+
+.about-text-content h2 {
   font-size: 48px;
   color: #3B3B3B;
   margin-bottom: 24px;
+  font-weight: bold;
 }
 
-.about-content p {
+.about-text-content p {
   font-size: 20px;
   color: #3B3B3B;
-  text-align: center;
-  max-width: 800px;
   line-height: 1.6;
+}
+
+.about-image-placeholder {
+  width: 300px;
+  height: 300px;
+  background-color: #ccc; /* Light gray placeholder */
+  border-radius: 10px;
+  flex-shrink: 0; /* Prevent shrinking */
 }

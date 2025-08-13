@@ -1,10 +1,13 @@
 import React from 'react';
 import { portfolioData } from '../../data';
 import './Contact.css';
+import { useInView } from '../../hooks/useInView';
 
 const Contact = () => {
+  const [ref, inView] = useInView();
+
   return (
-    <div className="contact-container" id="contact" data-testid="contact-section">
+    <div ref={ref} className={`contact-container fade-in-section ${inView ? 'is-visible' : ''}`} id="contact" data-testid="contact-section">
       <div className="contact-content">
         <h2>{portfolioData.contact.title}</h2>
         <p>{portfolioData.contact.description}</p>

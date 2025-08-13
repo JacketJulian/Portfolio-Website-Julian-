@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to right, #E6E6FA, #ADD8E6); /* Global Light Purple/Blue gradient */
 }
 
 code {

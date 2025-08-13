@@ -1,5 +1,4 @@
 .contact-container {
-  background: linear-gradient(to right, #f5f5dc, #f5deb3); /* Tan gradient */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,14 +39,14 @@
 
 .contact-email {
   font-size: 24px;
-  color: #A0522D; /* Sienna */
+  color: #4682B4; /* SteelBlue */
   text-decoration: none;
   margin-bottom: 24px;
   transition: color 0.3s ease;
 }
 
 .contact-email:hover {
-  color: #3B3B3B;
+  color: #191970; /* MidnightBlue */
 }
 
 .social-links a {
@@ -59,5 +58,5 @@
 }
 
 .social-links a:hover {
-  color: #A0522D; /* Sienna */
+  color: #191970; /* MidnightBlue */
 }
