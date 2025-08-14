@@ -49,6 +49,7 @@
 }
 
 .nav-links {
+  color: #3B3B3B; /* Primary color */
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -59,5 +60,5 @@
 }
 
 .nav-links:hover {
-  color: #191970; /* MidnightBlue */
+  color: #4682B4; /* SteelBlue */
 }

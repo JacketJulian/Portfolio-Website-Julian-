@@ -48,11 +48,12 @@
 }
 
 .about-image-placeholder {
-  width: 300px;
-  height: 300px;
+  width: 360px;
+  height: 400px;
   border-radius: 10px;
   flex-shrink: 0; /* Prevent shrinking */
   overflow: hidden; /* Hide overflowing image parts */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-image-placeholder img {

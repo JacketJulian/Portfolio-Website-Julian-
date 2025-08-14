@@ -1,7 +1,7 @@
 export const portfolioData = {
   name: "Julian Mangual",
-  title: "Software Engineer | Full-Stack Developer",
-  profileImage: "https://via.placeholder.com/300", // Add your profile image URL here
+  title: "🧑🏻‍💻 Software Engineer | Full-Stack Developer",
+  profileImage: "https://i.imgur.com/WVmDvbE.jpeg", // Add your profile image URL here
   navLinks: [
     {
       name: "About",
@@ -12,68 +12,59 @@ export const portfolioData = {
       url: "projects"
     },
     {
-      name: "Resume",
-      url: "resume"
-    },
-    {
       name: "Contact",
       url: "contact"
     }
   ],
   about: {
     title: "About Me",
-    description: "I am a passionate software engineer with a strong background in full-stack development. I have experience in building web applications using modern technologies like React, Node.js, and more. I am a quick learner and always eager to take on new challenges. In my free time, I enjoy working on personal projects and exploring new technologies."
+    resumeLink: "https://docs.google.com/viewer?url=https://drive.google.com/file/d/1QoQ08Ryh2Zz2AXWnpPmKmRCrpErdeqIh/view?usp=sharing&embedded=true",
+    downloadText: "📋 Download Resume"
   },
   projects: {
     title: "My Projects",
     projects: [
       {
-        title: 'Project One',
-        description: 'This is a brief description of Project One. It showcases my skills in React and Node.js.',
+        title: 'Mobile Shopping App',
+        description: 'E-commerce mobile app built with React Native and Typescript simulating a real-world storefront with cart tracking, sessions, and RESTful APIs',
         demoLink: '#',
         githubLink: '#',
-        image: 'https://via.placeholder.com/300x200',
+        image: 'https://i.imgur.com/WKiT4yX.png',
         liveDemoText: "Live Demo",
         githubText: "GitHub"
       },
       {
-        title: 'Project Two',
-        description: 'This is a brief description of Project Two. It was built using Python and Django.',
+        title: 'Cross-Platform Music Streaming App',
+        description: 'Real-time music streaming app front end built with React Native, simulating Spotify-like playback, dynamic queueing, and backend security features with a responsive, accessible UI',
         demoLink: '#',
         githubLink: '#',
-        image: 'https://via.placeholder.com/300x200',
+        image: 'https://i.imgur.com/9zZjSed.jpeg',
         liveDemoText: "Live Demo",
         githubText: "GitHub"
       },
       {
-        title: 'Project Three',
-        description: 'This is a brief description of Project Three. It is a mobile app developed with React Native.',
+        title: 'Weather App',
+        description: 'Cross-platform weather application built with React Native and TypeScript, featuring real-time forecast data, modular components, and mobile-optimized UI.',
         demoLink: '#',
         githubLink: '#',
-        image: 'https://via.placeholder.com/300x200',
+        image: 'https://i.imgur.com/xolUkW6.jpeg',
         liveDemoText: "Live Demo",
         githubText: "GitHub"
       }
     ]
   },
-  resume: {
-    title: "My Resume",
-    description: "You can view or download my resume by clicking the button below.",
-    resumeLink: "#",
-    downloadText: "Download Resume"
-  },
   contact: {
     title: "Contact Me",
     description: "I'm currently open to new opportunities. Feel free to reach out to me via email or connect with me on social media.",
-    email: "your.email@example.com",
+    email: "julianjmangual@gmail.com",
     socialLinks: [
       {
         name: "LinkedIn",
-        url: "#"
+        url: "https://www.linkedin.com/in/julian-mangual-949a0622b/"
       },
       {
         name: "GitHub",
-        url: "#"
+        url: "https://github.com/JacketJulian/"
       }
     ]
   },

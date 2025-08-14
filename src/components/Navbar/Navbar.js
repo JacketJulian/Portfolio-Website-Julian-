@@ -29,7 +29,7 @@ const Navbar = () => {
         <ul className="nav-menu">
           {portfolioData.navLinks.map((link, index) => (
             <li className="nav-item" key={index}>
-              <Link to={link.url} smooth={true} duration={500} className="nav-links" style={navLinksStyle}>
+              <Link to={link.url} smooth={true} duration={500} className="nav-links">
                 {link.name}
               </Link>
             </li>
