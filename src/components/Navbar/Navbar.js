@@ -8,22 +8,10 @@ import { theme } from '../../theme';
 const Navbar = () => {
   const isScrolled = useScroll();
 
-  const navbarStyle = {
-    background: isScrolled ? theme.colors.skyBlue : 'transparent',
-  };
-
-  const navbarLogoStyle = {
-    color: theme.colors.primary,
-  };
-
-  const navLinksStyle = {
-    color: theme.colors.primary,
-  };
-
   return (
-    <nav className={isScrolled ? 'navbar active' : 'navbar'} style={navbarStyle}>
+    <nav className={isScrolled ? 'navbar active' : 'navbar'}>
       <div className="navbar-container">
-        <Link to="home" smooth={true} duration={500} className="navbar-logo" data-testid="navbar-logo-link" style={navbarLogoStyle}>
+        <Link to="home" smooth={true} duration={500} className="navbar-logo" data-testid="navbar-logo-link">
           {portfolioData.name}
         </Link>
         <ul className="nav-menu">

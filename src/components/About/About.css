@@ -18,11 +18,31 @@
   width: 100%; /* Ensure it takes full width */
 }
 
+.about-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start */
+  margin-left: 50px; /* Space between image and text */
+}
+
 .about-text-content {
   flex: 1; /* Take up available space */
   max-width: 600px; /* Limit text width */
-  text-align: center; /* Center-justify text */
-  margin-left: 50px; /* Space between image and text */
+  text-align: left; /* Align text to the left */
+  /* Removed margin-left from here */
+  background-color: #1CA4ED; /* Custom blue for sent message bubble */
+  border-radius: 20px; /* Rounded corners */
+  border-bottom-left-radius: 5px; /* Sharper corner for the tail side */
+  padding: 20px;
+  position: relative; /* Needed for pseudo-element positioning */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.message-tail {
+  position: absolute;
+  left: -15px; /* Position to the left of the bubble */
+  bottom: 0px; /* Align with the bottom of the bubble */
+  z-index: 2; /* Ensure it's behind the bubble */
 }
 
 .intro-name {
@@ -47,6 +67,13 @@
   line-height: 1.6;
 }
 
+.about-resume-button {
+  background-color: #1CA4ED; /* Same as text bubble container */
+  border: none; /* Remove border */
+  color: #fff; /* White text */
+  /* Removed transition */
+}
+
 .about-image-placeholder {
   width: 360px;
   height: 400px;
@@ -61,4 +88,26 @@
   height: 100%;
   object-fit: cover; /* Cover the area, cropping if necessary */
   border-radius: 10px; /* Match placeholder border-radius */
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  color: #3B3B3B; /* Primary color */
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
 }

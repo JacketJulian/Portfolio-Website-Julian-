@@ -25,39 +25,31 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-.project-card:hover {
-  transform: translateY(-10px);
+.project-links {
+  margin-top: auto; /* Push to the bottom */
+  padding-bottom: 20px; /* Add padding to the bottom of the card */
 }
 
-.project-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-}
-
-.project-card h3 {
-  font-size: 24px;
-  margin: 20px 0 16px 0; /* Add margin */
+.project-links a {
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: normal; /* Match resume button */
+  display: inline-block;
+  background-color: #1CA4ED; /* Same blue as speech bubble */
+  color: #fff; /* White text */
+  padding: 5px 20px;
+  border-radius: 20px;
+  transition: none; /* Remove transition */
 }
 
 .project-card p {
   font-size: 16px;
   margin-bottom: 24px;
   padding: 0 20px;
-}
-
-.project-links a {
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
-  transition: color 0.3s ease;
-  padding-bottom: 20px;
-  display: inline-block;
-}
-
-.project-links a:hover {
-  color: #191970; /* MidnightBlue */
+  max-height: 100px; /* Limit description height */
+  overflow-y: auto; /* Add scrollbar if content overflows */
 }

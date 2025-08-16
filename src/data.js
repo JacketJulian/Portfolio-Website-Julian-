@@ -12,6 +12,10 @@ export const portfolioData = {
       url: "projects"
     },
     {
+      name: "Education",
+      url: "education"
+    },
+    {
       name: "Contact",
       url: "contact"
     }
@@ -25,7 +29,7 @@ export const portfolioData = {
     title: "My Projects",
     projects: [
       {
-        title: 'Mobile Shopping App',
+        title: 'Mobile Shopping App (Target-Inspired UI)',
         description: 'E-commerce mobile app built with React Native and Typescript simulating a real-world storefront with cart tracking, sessions, and RESTful APIs',
         demoLink: '#',
         githubLink: '#',
@@ -34,7 +38,7 @@ export const portfolioData = {
         githubText: "GitHub"
       },
       {
-        title: 'Cross-Platform Music Streaming App',
+        title: 'Cross-Platform Music Streaming App (Spotify-Inspired UI)',
         description: 'Real-time music streaming app front end built with React Native, simulating Spotify-like playback, dynamic queueing, and backend security features with a responsive, accessible UI',
         demoLink: '#',
         githubLink: '#',
@@ -50,6 +54,27 @@ export const portfolioData = {
         image: 'https://i.imgur.com/xolUkW6.jpeg',
         liveDemoText: "Live Demo",
         githubText: "GitHub"
+      }
+    ]
+  },
+  education: {
+    title: "My Education",
+    degrees: [
+      {
+        institutionName: "Southern Connecticut State University",
+        degree: "Bachelor of Science in Computer Science",
+        date: "2020 - 2024",
+        location: "New Haven, CT",
+        logo: "https://southernctowls.com/images/2019/7/10/1000_sc_with_talon.jpg", 
+        techStack: ["Data Structures", "Algorithms", "Object-Oriented Programming", "Web Development", "Database Management"]
+      },
+      {
+        institutionName: "University of Connecticut",
+        degree: "Master of Science in Electrical and Computer Engineering",
+        date: "2025 - 2026",
+        location: "Online (Storrs, CT)",
+        logo: "https://upload.wikimedia.org/wikipedia/en/thumb/5/56/University_of_Connecticut_seal.svg/1200px-University_of_Connecticut_seal.svg.png", // Placeholder for university logo
+        techStack: ["Cloud Computing", "Distributed Systems", "Machine Learning"]
       }
     ]
   },

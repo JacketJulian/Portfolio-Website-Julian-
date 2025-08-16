@@ -26,7 +26,7 @@ const Contact = () => {
   return (
     <div ref={ref} className={`contact-container fade-in-section ${inView ? 'is-visible' : ''}`} id="contact" data-testid="contact-section">
       <div className="contact-content">
-        <h1 style={titleStyle}>{portfolioData.contact.title}</h1>
+        <h1 className="section-title-bubble">{portfolioData.contact.title}</h1>
         <p style={descriptionStyle}>{portfolioData.contact.description}</p>
         <div className="contact-info">
           <a href={`mailto:${portfolioData.contact.email}`} className="contact-email" style={emailStyle}>{portfolioData.contact.email}</a>

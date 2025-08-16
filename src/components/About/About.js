@@ -30,13 +30,21 @@ const About = () => {
         <div className="about-image-placeholder" style={aboutImagePlaceholderStyle}>
           <img src={portfolioData.profileImage} alt="Your Profile" />
         </div>
-        <div className="about-text-content">
-          <h1 style={{ fontSize: '36px', marginBottom: '10px', color: theme.colors.primary, fontWeight: 'bold' }}>👋 Hi, I'm</h1>
-          <h1 className="intro-name" style={introNameStyle}>{portfolioData.name}</h1>
-          <p className="intro-title" style={introTitleStyle}>{portfolioData.title}</p>
-          <a href={portfolioData.about.resumeLink} className="about-resume-button" style={{ backgroundColor: theme.colors.secondary, color: theme.colors.white, padding: '10px 20px', borderRadius: '20px', textDecoration: 'none', fontWeight: 'bold', marginTop: '5px', display: 'inline-block' }}>{portfolioData.about.downloadText}</a>
-          <p style={aboutTextStyle}>{portfolioData.about.description}</p>
+        <div className="about-text-wrapper">
+          <div className="about-text-content">
+            <h1 style={{ fontSize: '36px', marginBottom: '10px', color: theme.colors.white, fontWeight: 'bold' }}>👋 Hi, I'm</h1>
+            <h1 className="intro-name" style={{ color: theme.colors.white }}>{portfolioData.name}</h1>
+            <p className="intro-title" style={{ color: theme.colors.white }}>{portfolioData.title}</p>
+            <p style={{ color: theme.colors.white }}>{portfolioData.about.description}</p>
+            <svg class="message-tail" width="20" height="20" viewBox="0 0 20 20">
+              <path d="M0 20 L20 20 L20 0 C10 0 0 10 0 20Z" fill="#1CA4ED"/>
+            </svg>
+          </div>
+          <a href={portfolioData.about.resumeLink} className="about-resume-button" style={{ padding: '10px 20px', borderRadius: '20px', textDecoration: 'none', fontWeight: 'normal', marginTop: '20px', display: 'inline-block' }}>{portfolioData.about.downloadText}</a>
         </div>
+      </div>
+      <div className="scroll-indicator">
+        ⬇️
       </div>
     </div>
   );
