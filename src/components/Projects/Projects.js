@@ -16,7 +16,7 @@ const Projects = () => {
   };
 
   const titleStyle = {
-    color: theme.colors.primary,
+    // Removed color property
   };
 
   const descriptionStyle = {
@@ -30,7 +30,7 @@ const Projects = () => {
         {portfolioData.projects.projects.map((project, index) => (
           <div className="project-card" key={index} style={cardStyle}>
             <img src={project.image} alt={project.title} className="project-image" />
-            <h3 style={titleStyle}>{project.title}</h3>
+            <h1 style={titleStyle}>{project.title}</h1>
             <p style={descriptionStyle}>{project.description}</p>
             <div className="project-links">
               <a href={project.demoLink} target="_blank" rel="noopener noreferrer">{project.liveDemoText}</a>

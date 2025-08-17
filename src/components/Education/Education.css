@@ -6,7 +6,9 @@
 }
 
 .education-heading {
+  font-size: 48px;
   margin-bottom: 48px;
+  font-weight: bold;
 }
 
 .education-list {
