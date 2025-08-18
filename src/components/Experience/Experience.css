@@ -1,0 +1,76 @@
+.experience-container {
+  padding: 100px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.experience-heading {
+  font-size: 48px;
+  margin-bottom: 48px;
+  font-weight: bold;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.experience-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.experience-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.experience-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.experience-details h2 {
+  font-size: 24px;
+  margin: 0 0 5px 0;
+  color: #3B3B3B;
+}
+
+.experience-details h3 {
+  font-size: 18px;
+  margin: 0 0 5px 0;
+  color: #4682B4;
+}
+
+.experience-date,
+.experience-location {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.experience-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-bubble {
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: normal; /* Match resume button */
+  white-space: nowrap;
+  background-color: #1CA4ED; /* Same as text bubble container */
+  color: #fff; /* White text */
+}

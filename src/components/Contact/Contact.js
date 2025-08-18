@@ -29,10 +29,9 @@ const Contact = () => {
         <h1 className="section-title-bubble">{portfolioData.contact.title}</h1>
         <p style={descriptionStyle}>{portfolioData.contact.description}</p>
         <div className="contact-info">
-          <a href={`mailto:${portfolioData.contact.email}`} className="contact-email" style={emailStyle}>{portfolioData.contact.email}</a>
           <div className="social-links">
             {portfolioData.contact.socialLinks.map((link, index) => (
-              <a href={link.url} key={index} target="_blank" rel="noopener noreferrer" style={socialLinkStyle}>{link.name}</a>
+              <a href={link.url} key={index} target="_blank" rel="noopener noreferrer" className="social-button">{link.name}</a>
             ))}
           </div>
         </div>

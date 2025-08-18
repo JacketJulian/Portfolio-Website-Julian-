@@ -12,6 +12,10 @@ export const portfolioData = {
       url: "projects"
     },
     {
+      name: "Experience",
+      url: "experience"
+    },
+    {
       name: "Education",
       url: "education"
     },
@@ -57,6 +61,35 @@ export const portfolioData = {
       }
     ]
   },
+  experience: {
+    title: "My Experience 💼",
+    jobs: [
+      {
+        companyName: "Target Corporation",
+        jobTitle: "Software Engineer",
+        date: "Upcoming - 2024",
+        location: "Minneapolis, MN",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Target_logo.svg/1200px-Target_logo.svg.png", // Placeholder for company logo
+        techStack: ["React", "Java", "Spring Boot", "SQL", "Agile Methologies", "Git", "CI/CD Pipelines", "JUnit", "APIs"]
+      },
+      {
+        companyName: "The Dev Effect",
+        jobTitle: "Software Engineer Intern/Research Engineer Intern",
+        date: "June 2023 - August 2023",
+        location: "New Haven, CT",
+        logo: "https://images.squarespace-cdn.com/content/v1/5d233359babc7000011ff097/c817fff0-6751-4de0-8666-e9a49cca6cc4/3color_Dev_Effect_logo_ondark_1000px_wide_800px_tall.png?format=1500w", // Placeholder for company logo
+        techStack: ["Python", "Flask", "Generative AI", "NLP", "APIs", "CI/CD Pipelines", "PyTest", "Git"]
+      },
+      {
+        companyName: "Southern Connecticut State University",
+        jobTitle: "Data Structures & Algorithms Tutor",
+        date: "August 2022 - May 2023",
+        location: "New Haven, CT",
+        logo: "https://southernctowls.com/images/2019/7/10/1000_sc_with_talon.jpg", // Placeholder for company logo
+        techStack: ["Python", "Data Structures", "Algorithms", "Problem Solving"]
+      },
+    ]
+  },
   education: {
     title: "My Education 👨🏻‍🎓",
     degrees: [
@@ -67,21 +100,12 @@ export const portfolioData = {
         location: "New Haven, CT",
         logo: "https://southernctowls.com/images/2019/7/10/1000_sc_with_talon.jpg", 
         techStack: ["Data Structures", "Algorithms", "Object-Oriented Programming", "Web Development", "Database Management"]
-      },
-      {
-        institutionName: "University of Connecticut",
-        degree: "Master of Science in Electrical and Computer Engineering",
-        date: "2025 - 2026",
-        location: "Online (Storrs, CT)",
-        logo: "https://upload.wikimedia.org/wikipedia/en/thumb/5/56/University_of_Connecticut_seal.svg/1200px-University_of_Connecticut_seal.svg.png", // Placeholder for university logo
-        techStack: ["Cloud Computing", "Distributed Systems", "Machine Learning"]
       }
     ]
   },
   contact: {
     title: "Contact Me 💬",
     description: "I'm currently open to new opportunities. Feel free to reach out to me via email or connect with me on social media.",
-    email: "julianjmangual@gmail.com",
     socialLinks: [
       {
         name: "LinkedIn",

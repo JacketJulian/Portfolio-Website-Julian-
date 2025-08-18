@@ -36,24 +36,15 @@
   align-items: center;
 }
 
-.contact-email {
-  font-size: 24px;
+.social-button {
   text-decoration: none;
-  margin-bottom: 24px;
-  transition: color 0.3s ease;
-}
-
-.contact-email:hover {
-  color: #191970; /* MidnightBlue */
-}
-
-.social-links a {
-  text-decoration: none;
-  margin: 0 15px;
+  margin: 0 10px; /* Adjusted margin for spacing between buttons */
   font-size: 18px;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-  color: #191970; /* MidnightBlue */
+  font-weight: normal; /* Match other buttons */
+  display: inline-block;
+  background-color: #1CA4ED; /* Same blue as speech bubble */
+  color: #fff; /* White text */
+  padding: 5px 20px;
+  border-radius: 20px;
+  transition: none; /* Remove transition */
 }
