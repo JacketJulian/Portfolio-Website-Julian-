@@ -10,12 +10,13 @@
 
 .about-content {
   z-index: 3;
-  max-width: 1200px;
+  max-width: 1000px; /* Reduced max-width */
   display: flex;
-  flex-direction: row; /* Changed to row for two columns */
-  justify-content: space-around; /* Distribute space */
-  align-items: center; /* Vertically center items */
-  width: 100%; /* Ensure it takes full width */
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto; /* Center the container */
 }
 
 .about-text-wrapper {
@@ -92,12 +93,13 @@
 
 .scroll-indicator {
   position: absolute;
-  bottom: 80px;
+  bottom: 20px; /* Moved up */
   left: 50%;
   transform: translateX(-50%);
   font-size: 3rem;
   color: #3B3B3B; /* Primary color */
   animation: bounce 2s infinite;
+  z-index: 0; /* Ensure it's behind other content */
 }
 
 @keyframes bounce {

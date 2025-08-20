@@ -61,8 +61,12 @@ export const portfolioData = {
       }
     ]
   },
+  headings: {
+    projects: "My Projects 🧑🏻‍💻",
+    experience: "My Experience 💼",
+    education: "My Education 👨🏻‍🎓",
+  },
   experience: {
-    title: "My Experience 💼",
     jobs: [
       {
         companyName: "Target Corporation",

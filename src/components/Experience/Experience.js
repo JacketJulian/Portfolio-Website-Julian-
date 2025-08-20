@@ -24,7 +24,7 @@ const Experience = () => {
 
   return (
     <div ref={ref} className={`experience-container fade-in-section ${inView ? 'is-visible' : ''}`} id="experience" data-testid="experience-section">
-      <h1 className="experience-heading section-title-bubble">{portfolioData.experience.title}</h1>
+      <h1 className="experience-heading">{portfolioData.headings.experience}</h1>
       <div className="experience-list">
         {sortedJobs.map((job, index) => (
           <div className="experience-item" key={index}>

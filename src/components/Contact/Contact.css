@@ -10,11 +10,12 @@
 
 .contact-content {
   z-index: 3;
-  max-width: 1200px;
+  max-width: 1000px; /* Reduced max-width */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin: 0 auto; /* Center the container */
 }
 
 .contact-content h1 {
@@ -28,6 +29,30 @@
   max-width: 800px;
   line-height: 1.6;
   margin-bottom: 48px;
+}
+
+.descriptionStyle {
+  background-color: #1CA4ED;
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+.descriptionStyle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-right-color: #1CA4ED;
+  border-left: 0;
+  border-bottom: 0;
+  margin-top: -7.5px;
+  margin-left: -15px;
 }
 
 .contact-info {

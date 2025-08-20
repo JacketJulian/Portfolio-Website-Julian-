@@ -16,7 +16,8 @@
   flex-direction: column;
   gap: 40px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px; /* Reduced max-width */
+  margin: 0 auto; /* Center the container */
 }
 
 .experience-item {
