@@ -9,6 +9,10 @@
   font-size: 48px;
   margin-bottom: 48px;
   font-weight: bold;
+  background-color: #1CA4ED;
+  color: #fff;
+  padding: 10px 40px;
+  border-radius: 100px;
 }
 
 .experience-list {
@@ -21,10 +25,6 @@
 }
 
 .experience-item {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .experience-header {

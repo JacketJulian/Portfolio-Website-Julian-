@@ -46,7 +46,7 @@ export const portfolioData = {
         description: 'Real-time music streaming app front end built with React Native, simulating Spotify-like playback, dynamic queueing, and backend security features with a responsive, accessible UI',
         demoLink: '#',
         githubLink: '#',
-        image: 'https://i.imgur.com/9zZjSed.jpeg',
+        image: 'https://i.imgur.com/HUjnB7j.png',
         liveDemoText: "Live Demo",
         githubText: "GitHub"
       },
@@ -55,7 +55,7 @@ export const portfolioData = {
         description: 'Cross-platform weather application built with React Native and TypeScript, featuring real-time forecast data, modular components, and mobile-optimized UI.',
         demoLink: '#',
         githubLink: '#',
-        image: 'https://i.imgur.com/xolUkW6.jpeg',
+        image: 'https://i.imgur.com/Ml36i08.png',
         liveDemoText: "Live Demo",
         githubText: "GitHub"
       }
@@ -96,14 +96,15 @@ export const portfolioData = {
   },
   education: {
     title: "My Education 👨🏻‍🎓",
+    coursesTitle: "Relevant Coursework",
+    courses: ["Data Structures", "Algorithms", "Object-Oriented Programming", "Web Development", "Database Management"],
     degrees: [
       {
         institutionName: "Southern Connecticut State University",
         degree: "Bachelor of Science in Computer Science",
         date: "2020 - 2024",
         location: "New Haven, CT",
-        logo: "https://southernctowls.com/images/2019/7/10/1000_sc_with_talon.jpg", 
-        techStack: ["Data Structures", "Algorithms", "Object-Oriented Programming", "Web Development", "Database Management"]
+        logo: "https://southernctowls.com/images/2019/7/10/1000_sc_with_talon.jpg"
       }
     ]
   },

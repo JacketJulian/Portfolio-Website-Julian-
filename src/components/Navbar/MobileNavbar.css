@@ -26,7 +26,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  border-radius: 10px;
+  height: 35vh;
   width: 250px;
   background-color: rgba(248, 248, 248, 0.95);
   z-index: 999;

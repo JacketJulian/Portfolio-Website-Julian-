@@ -12,11 +12,11 @@ const Projects = () => {
   };
 
   const cardStyle = {
-    background: theme.colors.white,
+    
   };
 
   const titleStyle = {
-    // Removed color property
+    fontweight: 'bold',
   };
 
   const descriptionStyle = {

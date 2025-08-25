@@ -25,6 +25,14 @@ const Education = () => {
   return (
     <div ref={ref} className={`education-container fade-in-section ${inView ? 'is-visible' : ''}`} id="education" data-testid="education-section">
       <h1 className="education-heading section-title-bubble">{portfolioData.education.title}</h1>
+      <div className="education-speech-bubble">
+        <h3>{portfolioData.education.coursesTitle}</h3>
+        <ul>
+          {portfolioData.education.courses.map((course, index) => (
+            <li key={index}>{course}</li>
+          ))}
+        </ul>
+      </div>
       <div className="education-list">
         {sortedDegrees.map((edu, index) => (
           <div className="education-item" key={index}>
@@ -37,11 +45,7 @@ const Education = () => {
                 <p className="education-location">{edu.location}</p>
               </div>
             </div>
-            <div className="education-tech-stack">
-              {edu.techStack.map((tech, techIndex) => (
-                <span key={techIndex} className="tech-bubble">{tech}</span>
-              ))}
-            </div>
+            
           </div>
         ))}
       </div>
