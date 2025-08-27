@@ -9,6 +9,7 @@ This is a modern, responsive, and interactive personal portfolio website designe
 -   **Smooth Scrolling:** Seamless navigation between sections with smooth scroll effects.
 -   **Responsive Layout:** Adapts gracefully to various screen sizes (desktop, tablet, mobile).
 -   **Themed Components:** Consistent styling across the application using a centralized theme.
+-   **Custom Favicon:** Includes a custom favicon for brand recognition.
 
 ### About Section
 -   **Personalized Greeting:** Features a "👋 Hi, I'm" greeting with a custom font weight.
@@ -19,6 +20,7 @@ This is a modern, responsive, and interactive personal portfolio website designe
 
 ### Projects Section
 -   **Dynamic Project Display:** Showcases projects with images, titles, and descriptions.
+-   **Styled Descriptions:** Project descriptions are presented in a rounded-rectangle container with a blue background and contrasting white, left-aligned text for readability.
 -   **Styled Hyperlinks:** "Live Demo" and "GitHub" links are styled as rounded buttons with a blue background (`#1CA4ED`) and white text, similar to the resume button.
 -   **Description Overflow:** Project descriptions are limited in height with a scrollbar for longer content, maintaining card uniformity.
 

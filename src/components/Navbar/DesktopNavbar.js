@@ -26,8 +26,9 @@ const DesktopNavbar = () => {
       if (navRefs.current[activeLink]) {
         const activeElement = navRefs.current[activeLink];
         setIndicatorStyle({
-          left: activeElement.offsetLeft,
-          width: activeElement.offsetWidth,
+          left: activeElement.offsetLeft - 10,
+          width: activeElement.offsetWidth + 15,
+          height: activeElement.offsetHeight + 20,
         });
       }
     };

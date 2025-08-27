@@ -16,11 +16,15 @@ const Projects = () => {
   };
 
   const titleStyle = {
-    fontweight: 'bold',
+    fontWeight: 'bold',
   };
 
   const descriptionStyle = {
-    color: theme.colors.primary,
+    backgroundColor: theme.colors.bubbleBlue,
+    borderRadius: '20px',
+    padding: '15px',
+    paddingTop: '5px',
+    color: theme.colors.white,
   };
 
   return (

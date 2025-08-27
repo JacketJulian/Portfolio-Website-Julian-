@@ -55,7 +55,7 @@ export const portfolioData = {
         description: 'Cross-platform weather application built with React Native and TypeScript, featuring real-time forecast data, modular components, and mobile-optimized UI.',
         demoLink: '#',
         githubLink: '#',
-        image: 'https://i.imgur.com/Ml36i08.png',
+        image: 'https://i.imgur.com/Ml36i08.pngmy',
         liveDemoText: "Live Demo",
         githubText: "GitHub"
       }
@@ -71,7 +71,7 @@ export const portfolioData = {
       {
         companyName: "Target Corporation",
         jobTitle: "Software Engineer",
-        date: "Upcoming - 2024",
+        date: "Upcoming - 2025",
         location: "Minneapolis, MN",
         logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Target_logo.svg/1200px-Target_logo.svg.png", // Placeholder for company logo
         techStack: ["React", "Java", "Spring Boot", "SQL", "Agile Methologies", "Git", "CI/CD Pipelines", "JUnit", "APIs"]
@@ -124,7 +124,7 @@ export const portfolioData = {
   },
   colors: {
     primary: '#3B3B3B',
-    secondary: '#4682B4',
+    bubbleBlue: '#1CA4ED',
     tertiary: '#191970',
     white: '#fff',
     skyBlue: '#87CEEB',
