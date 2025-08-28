@@ -2,6 +2,7 @@ import React from 'react';
 import { portfolioData } from '../../data';
 import './DesktopEducation.css';
 import { useInView } from '../../hooks/useInView';
+import { theme } from '../../theme';
 
 const DesktopEducation = () => {
   const [ref, inView] = useInView();
