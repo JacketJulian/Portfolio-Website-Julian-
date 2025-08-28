@@ -1,50 +1,22 @@
-import React from 'react';
-import { portfolioData } from '../../data';
-import './Projects.css';
-import { useInView } from '../../hooks/useInView';
-import { theme } from '../../theme';
+import React, { useState, useEffect } from 'react';
+import DesktopProjects from './DesktopProjects';
+import MobileProjects from './MobileProjects';
 
 const Projects = () => {
-  const [ref, inView] = useInView();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  const headingStyle = {
-    color: theme.colors.primary,
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
 
-  const cardStyle = {
-    
-  };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
-  const titleStyle = {
-    fontWeight: 'bold',
-  };
-
-  const descriptionStyle = {
-    backgroundColor: theme.colors.bubbleBlue,
-    borderRadius: '20px',
-    padding: '15px',
-    paddingTop: '5px',
-    color: theme.colors.white,
-  };
-
-  return (
-    <div ref={ref} className={`projects-container fade-in-section ${inView ? 'is-visible' : ''}`} id="projects" data-testid="projects-section">
-      <h1 className="projects-heading section-title-bubble">{portfolioData.projects.title}</h1>
-      <div className="projects-grid">
-        {portfolioData.projects.projects.map((project, index) => (
-          <div className="project-card" key={index} style={cardStyle}>
-            <img src={project.image} alt={project.title} className="project-image" />
-            <h1 style={titleStyle}>{project.title}</h1>
-            <p style={descriptionStyle}>{project.description}</p>
-            <div className="project-links">
-              <a href={project.demoLink} target="_blank" rel="noopener noreferrer">{project.liveDemoText}</a>
-              <a href={project.githubLink} target="_blank" rel="noopener noreferrer">{project.githubText}</a>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  return isMobile ? <MobileProjects /> : <DesktopProjects />;
 };
 
 export default Projects;
