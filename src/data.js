@@ -58,7 +58,13 @@ export const portfolioData = {
         image: 'https://i.imgur.com/Ml36i08.pngmy',
         liveDemoText: "Live Demo",
         githubText: "GitHub"
-      }
+      },
+      {
+        title: 'Personal Portfolio Website',
+        description: 'Responsive portfolio website built with React.js, showcasing projects, experience, and education with smooth scrolling and modern design.',
+        demoLink: 'https://jacketjulian.github.io/Portfolio_Website/',
+        githubLink: ''
+      },
     ]
   },
   headings: {
