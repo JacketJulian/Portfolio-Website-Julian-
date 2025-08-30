@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import { portfolioData } from '../../data';
 import './MobileNavbar.css';
+import trackEvent from '../../utils/analytics';
 
 const BurgerIcon = () => (
   <svg width="40px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,6 +25,11 @@ const MobileNavbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleLinkClick = (linkName) => {
+    trackEvent('Navbar Click', { link: linkName });
+    toggleMenu();
+  };
+
   return (
     <>
       <div className={`mobile-navbar ${isOpen ? 'active' : ''}`}>
@@ -40,7 +46,7 @@ const MobileNavbar = () => {
                 smooth={true}
                 duration={500}
                 className="mobile-nav-links"
-                onClick={toggleMenu} // Close menu on click
+                onClick={() => handleLinkClick(link.name)} // Close menu on click
               >
                 {link.name}
               </Link>

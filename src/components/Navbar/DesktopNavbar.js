@@ -3,6 +3,7 @@ import { Link, Events, scrollSpy } from 'react-scroll';
 import { useScroll } from '../../hooks/useScroll';
 import { portfolioData } from '../../data';
 import './DesktopNavbar.css';
+import trackEvent from '../../utils/analytics';
 
 const DesktopNavbar = () => {
   const isScrolled = useScroll();
@@ -53,7 +54,7 @@ const DesktopNavbar = () => {
         <ul className='nav-menu'>
           <div className="nav-indicator" style={indicatorStyle}></div>
           {portfolioData.navLinks.map((link, index) => (
-            <li className="nav-item" key={index} ref={(el) => (navRefs.current[link.url] = el)}>
+            <li className="nav-item" key={index} ref={(el) => (navRefs.current[link.url] = el)} onClick={() => trackEvent('Navbar Click', { link: link.name })}>
               <Link
                 to={link.url}
                 smooth={true}

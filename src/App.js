@@ -8,10 +8,12 @@ import Education from './components/Education/Education';
 import Contact from './components/Contact/Contact';
 import './App.css';
 import { theme } from './theme';
+import trackEvent from './utils/analytics';
 
 function App() {
   useEffect(() => {
     document.body.style.background = `linear-gradient(to right, ${theme.colors.lavender}, ${theme.colors.lightBlue})`;
+    trackEvent('Page View', { page: window.location.pathname });
   }, []);
 
   return (

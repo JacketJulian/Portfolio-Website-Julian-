@@ -63,7 +63,8 @@ export const portfolioData = {
         title: 'Personal Portfolio Website',
         description: 'Responsive portfolio website built with React.js, showcasing projects, experience, and education with smooth scrolling and modern design.',
         demoLink: 'https://jacketjulian.github.io/Portfolio_Website/',
-        githubLink: ''
+        githubLink: '',
+        image: 'https://i.imgur.com/d43g2EV.jpeg',
       },
     ]
   },
