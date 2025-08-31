@@ -49,13 +49,18 @@
 }
 
 .education-heading {
-  font-size: 3rem;
-  margin-bottom: 3rem;
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
   font-weight: bold;
   background-color: #1CA4ED;
   color: #fff;
-  padding: 0.625rem 3.125rem;
+  padding: 0.625rem 1.25rem;
   border-radius: 6.25rem;
+  width: 21.875rem; /* 350px */
+  height: 4rem; /* 64px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .education-list {
@@ -119,7 +124,7 @@
     position: static;
     margin-bottom: 1.875rem;
     width: 100%;
-    max-width: 25rem;
+    max-width: 15rem;
   }
 
   .education-speech-bubble h3 {

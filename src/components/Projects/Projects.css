@@ -6,13 +6,18 @@
 }
 
 .projects-heading {
-  font-size: 3rem;
+  font-size: 2.25rem;
   margin-bottom: 3rem;
   font-weight: bold;
   background-color: #1CA4ED;
   color: #fff;
-  padding: 0.625rem 4.375rem;
+  padding: 0.625rem 1.25rem;
   border-radius: 6.25rem;
+  width: 21.875rem; /* 350px */
+  height: 4rem; /* 64px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .projects-grid-container {
