@@ -26,7 +26,7 @@ export const portfolioData = {
   ],
   about: {
     title: "About Me",
-    resumeLink: "https://docs.google.com/viewer?url=https://drive.google.com/file/d/1QoQ08Ryh2Zz2AXWnpPmKmRCrpErdeqIh/view?usp=sharing&embedded=true",
+    resumeLink: "https://drive.google.com/uc?export=download&id=1nIO4nQQbOgDFCyF_uXrxr-635H0t8LQZ",
     downloadText: "📋 Download Resume"
   },
   projects: {
@@ -109,7 +109,7 @@ export const portfolioData = {
       {
         institutionName: "Southern Connecticut State University",
         degree: "Bachelor of Science in Computer Science",
-        date: "2020 - 2024",
+        date: "2019 - 2023",
         location: "New Haven, CT",
         logo: "https://southernctowls.com/images/2019/7/10/1000_sc_with_talon.jpg"
       }
