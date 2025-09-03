@@ -16,6 +16,7 @@ steps:
     - 'portfolio-website'
     - '--image=northamerica-northeast2-docker.pkg.dev/optical-genre-468001-v1/portfolio-website/portfolio-website:latest'
     - '--region=northamerica-northeast2'
+    - '--port=80'
     - '--platform=managed'
     - '--allow-unauthenticated'
 
