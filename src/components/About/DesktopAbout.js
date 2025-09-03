@@ -27,9 +27,9 @@ const DesktopAbout = () => {
           </div>
           <a href={portfolioData.about.resumeLink} className="about-resume-button" style={{ padding: '10px 20px', borderRadius: '20px', textDecoration: 'none', fontWeight: 'normal', marginTop: '20px', display: 'inline-block' }}>{portfolioData.about.downloadText}</a>
         </div>
-      </div>
-      <div className="scroll-indicator">
-        ⬇️
+        <div className="scroll-indicator">
+          ⬇️
+        </div>
       </div>
     </div>
   );

@@ -93,14 +93,15 @@
 }
 
 .scroll-indicator {
-  position: absolute;
-  bottom: 1.25rem; /* Moved up */
-  left: 50%;
-  transform: translateX(-50%);
   font-size: 3rem;
   color: #3B3B3B; /* Primary color */
   animation: bounce 2s infinite;
-  z-index: 0; /* Ensure it's behind other content */
+  margin-top: 2rem;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  bottom: -10rem;
+  left: -1rem;
 }
 
 @keyframes bounce {

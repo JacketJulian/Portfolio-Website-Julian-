@@ -1,5 +1,5 @@
 .about-container {
-  margin-top: 1.20rem;
+  margin-top: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,7 +100,6 @@
   text-align: center;
   width: 100%;
   position: relative;
-  bottom: -10rem;
   left: -1rem;
 }
 
@@ -119,7 +118,7 @@
 /* Mobile Styles for About Section */
 @media screen and (max-width: 768px) {
   .about-container {
-    margin-top: 1.20rem; /* Added padding to the top of the section */
+    margin-top: 5vh; /* Added padding to the top of the section */
   }
 
   .about-content {
