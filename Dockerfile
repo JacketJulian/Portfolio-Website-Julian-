@@ -1,24 +1,38 @@
-# Build stage
+# ===== Build Stage =====
 FROM node:18-alpine AS build
 
+# Set the working directory
 WORKDIR /app
 
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-RUN npm install
+# Install dependencies
+RUN npm ci
 
-COPY . ./
+# Copy the rest of the application code
+COPY . .
 
+# Build the React application
 RUN npm run build
 
-# Production stage
-FROM nginx:stable-alpine
+# ===== Production Stage =====
+FROM nginx:1.23-alpine
 
-COPY --from=build /app/build /usr/share/nginx/html
+# Set the working directory
+WORKDIR /usr/share/nginx/html
 
-# Copy the nginx config file
+# Remove the default Nginx static assets
+RUN rm -rf ./*
+
+# Copy the built assets from the build stage
+COPY --from=build /app/build . 
+
+# Copy the custom Nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
+# Expose port 80
 EXPOSE 80
 
+# Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
