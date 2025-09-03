@@ -1,5 +1,5 @@
 .about-container {
-  margin-top: 1.50rem;
+  margin-top: 1.20rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,15 +93,15 @@
 }
 
 .scroll-indicator {
-  margin-top: 1.25rem;
-  position: absolute;
-  bottom: 1.25rem; /* Moved up */
-  left: 45%;
-  transform: translateX(-50%);
   font-size: 3rem;
   color: #3B3B3B; /* Primary color */
   animation: bounce 2s infinite;
-  z-index: 4; /* Ensure it's in front of other content */
+  margin-top: 2rem;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  bottom: -10rem;
+  left: -1rem;
 }
 
 @keyframes bounce {
@@ -119,7 +119,7 @@
 /* Mobile Styles for About Section */
 @media screen and (max-width: 768px) {
   .about-container {
-    margin-top: 1.50rem; /* Added padding to the top of the section */
+    margin-top: 1.20rem; /* Added padding to the top of the section */
   }
 
   .about-content {
