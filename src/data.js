@@ -117,7 +117,7 @@ export const portfolioData = {
   },
   contact: {
     title: "Contact Me 💬",
-    description: "I'm currently open to new opportunities. Feel free to reach out to me via email or connect with me on social media.",
+    description: "I'm currently open to new opportunities. Connect with me on social media.",
     socialLinks: [
       {
         name: "LinkedIn",

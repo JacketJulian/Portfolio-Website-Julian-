@@ -2,7 +2,6 @@ import React from 'react';
 import { portfolioData } from '../../data';
 import './Education.css';
 import { useInView } from '../../hooks/useInView';
-import { theme } from '../../theme';
 
 const Education = () => {
   const [ref, inView] = useInView();

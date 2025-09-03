@@ -7,18 +7,6 @@ import { theme } from '../../theme';
 const MobileAbout = () => {
   const [ref, inView] = useInView();
 
-  const introNameStyle = {
-    color: theme.colors.primary,
-  };
-
-  const introTitleStyle = {
-    color: theme.colors.secondary,
-  };
-
-  const aboutTextStyle = {
-    color: theme.colors.primary,
-  };
-
   const aboutImagePlaceholderStyle = {
     backgroundColor: theme.colors.white,
     border: `5px solid ${theme.colors.white}`,
