@@ -1,4 +1,5 @@
 .about-container {
+  margin-top: 1.50rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,6 +93,7 @@
 }
 
 .scroll-indicator {
+  margin-top: 1.25rem;
   position: absolute;
   bottom: 1.25rem; /* Moved up */
   left: 45%;
@@ -117,7 +119,7 @@
 /* Mobile Styles for About Section */
 @media screen and (max-width: 768px) {
   .about-container {
-    padding-top: 3.125rem; /* Added padding to the top of the section */
+    margin-top: 1.50rem; /* Added padding to the top of the section */
   }
 
   .about-content {
