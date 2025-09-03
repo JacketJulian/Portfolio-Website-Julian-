@@ -97,6 +97,7 @@
   color: #3B3B3B; /* Primary color */
   animation: bounce 2s infinite;
   margin-top: 2rem;
+  padding-bottom: 1rem;
   text-align: center;
   width: 100%;
   position: relative;
