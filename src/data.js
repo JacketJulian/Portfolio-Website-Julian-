@@ -26,7 +26,7 @@ export const portfolioData = {
   ],
   about: {
     title: "About Me",
-    resumeLink: "https://drive.google.com/uc?export=download&id=1nIO4nQQbOgDFCyF_uXrxr-635H0t8LQZ",
+    resumeLink: "https://drive.google.com/uc?export=download&id=1nIO4nQQbOgDFCyF_uXrxr-635H0t8LQZ", // Direct download link to your resume
     downloadText: "📋 Download Resume"
   },
   projects: {
