@@ -80,7 +80,7 @@ export const portfolioData = {
       {
         companyName: "Target Corporation",
         jobTitle: "Software Engineer",
-        date: "Upcoming - 2025",
+        date: "September 2025 - Present",
         location: "Minneapolis, MN",
         logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Target_logo.svg/1200px-Target_logo.svg.png", // Placeholder for company logo
         techStack: ["React", "Java", "Spring Boot", "SQL", "Agile Methologies", "Git", "CI/CD Pipelines", "JUnit", "APIs"]
