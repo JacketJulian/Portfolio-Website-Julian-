@@ -100,8 +100,7 @@
   padding-bottom: 1rem;
   text-align: center;
   width: 100%;
-  position: relative;
-  left: -1rem;
+  
 }
 
 @keyframes bounce {

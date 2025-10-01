@@ -27,7 +27,8 @@
   top: 0;
   left: 0;
   border-radius: 0.625rem;
-  height: 35vh;
+  height: auto;
+  padding-bottom: 1rem;
   width: 15.625rem;
   background-color: rgba(248, 248, 248, 0.95);
   z-index: 999;
@@ -54,6 +55,6 @@
 .mobile-nav-links {
   color: #3B3B3B;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
 }
