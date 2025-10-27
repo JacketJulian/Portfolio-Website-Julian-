@@ -83,7 +83,7 @@ export const portfolioData = {
         date: "September 2025 - Present",
         location: "Minneapolis, MN",
         logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Target_logo.svg/1200px-Target_logo.svg.png", // Placeholder for company logo
-        techStack: ["React", "Java", "Spring Boot", "SQL", "Agile Methologies", "Git", "CI/CD Pipelines", "JUnit", "APIs"]
+        techStack: ["React", "Java", "Spring Boot", "SQL", "Agile Methologies", "Git", "CI/CD Pipelines", "JUnit", "APIs", "Microservices", "Docker", "Kubernetes", "Apache Spark", "Apache Hive", "Hadoop", "Apache Kafka", "GCP", "HDFS", "Vue", " JavaScript", "TypeScript", "Node.js", "HBase", "Cassandra", "NoSQL","YAML"]
       },
       {
         companyName: "The Dev Effect",
