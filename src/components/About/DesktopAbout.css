@@ -40,13 +40,6 @@
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.message-tail {
-  position: absolute;
-  left: -0.9375rem; /* Position to the left of the bubble */
-  bottom: 0rem; /* Align with the bottom of the bubble */
-  z-index: 2; /* Ensure it's behind the bubble */
-}
-
 .intro-name {
   font-size: 3.75rem; /* Larger for name */
   margin-bottom: 0.625rem;
