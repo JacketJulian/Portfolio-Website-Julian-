@@ -1,7 +1,7 @@
 export const portfolioData = {
   name: "Julian Mangual",
   title: "🧑🏻‍💻 Software Engineer | Full-Stack Developer",
-  profileImage: "https://i.imgur.com/WVmDvbE.jpeg", // Add your profile image URL here
+  profileImage: "https://i.imgur.com/P4RN7Fb.png", // Add your profile image URL here
   navLinks: [
     {
       name: "About",
