@@ -8,9 +8,9 @@ const ModalWindow = ({ show, handleClose, children, title }) => {
     <div className={showHideClassName}>
       <section className="modal-main">
         <div className="modal-header">
-          <h5 className="modal-title">{title}</h5>
           <button type="button" className="close" onClick={handleClose}>
           </button>
+          <h5 className="modal-title">{title}</h5>
         </div>
         <div className="modal-body">
           {children}

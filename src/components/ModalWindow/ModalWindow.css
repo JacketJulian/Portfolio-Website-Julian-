@@ -11,7 +11,8 @@
 .modal-main {
   position: fixed;
   background: white;
-  width: 80%;
+  width: 100%;
+  max-width: 62.5rem;
   height: auto;
   top: 50%;
   left: 50%;
@@ -31,7 +32,7 @@
 
 .modal-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* Align items to the left */
   align-items: center;
   border-bottom: 1px solid #dee2e6;
   padding-bottom: 10px;
@@ -75,7 +76,7 @@
   opacity: 1;
   position: relative;
   cursor: pointer;
-  margin: 0; /* Remove default margin */
+  margin: 0 10px 0 0; /* Add margin-right for spacing */
   padding: 0; /* Remove default padding */
   transition: background-color 0.15s ease-in-out;
 }
@@ -127,7 +128,7 @@
 }
 
 .modal-footer > * {
-  margin: 0.25rem;
+  /* Removed margin as gap handles spacing */
 }
 
 .btn {
@@ -152,12 +153,12 @@
 
 .btn-secondary {
   color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: #1CA4ED;
+  background-color: #1CA4ED
 }
 
 .btn-secondary:hover {
   color: #fff;
-  background-color: #5c636a;
-  border-color: #565e64;
+  background-color: #1a93d4;
+  border-color: #1a93d4;
 }
