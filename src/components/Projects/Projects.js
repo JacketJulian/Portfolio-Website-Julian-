@@ -3,10 +3,13 @@ import { portfolioData } from '../../data';
 import './Projects.css';
 import { theme } from '../../theme';
 import trackEvent from '../../utils/analytics';
+import ModalWindow from '../ModalWindow/ModalWindow';
 
 const Projects = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
   const projectsPerPage = 3;
 
   const titleStyle = {
@@ -40,6 +43,16 @@ const Projects = () => {
     }, 300);
   };
 
+  const handleShowModal = (project) => {
+    setSelectedProject(project);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedProject(null);
+  };
+
   const startIndex = currentPage * projectsPerPage;
   const endIndex = startIndex + projectsPerPage;
   let currentProjects = portfolioData.projects.projects.slice(startIndex, endIndex);
@@ -56,15 +69,15 @@ const Projects = () => {
         <div className={`projects-grid ${isTransitioning ? 'transitioning' : ''}`}>
           {currentProjects.map((project, index) => (
             project ? (
-              <div className="project-card" key={index}>
+              <div className="project-card" key={index} onClick={() => handleShowModal(project)}>
                 <div className="project-image-container">
                   <img src={project.image} alt={project.title} className="project-image" loading="lazy" />
                 </div>
                 <h1 style={titleStyle}>{project.title}</h1>
                 <p style={descriptionStyle}>{project.description}</p>
                 <div className="project-links">
-                  <a href={project.demoLink} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('Project Demo Click', { project: project.title })}>{project.liveDemoText}</a>
-                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('Project GitHub Click', { project: project.title })}>{project.githubText}</a>
+                  <a href={project.demoLink} target="_blank" rel="noopener noreferrer" onClick={(e) => { e.stopPropagation(); trackEvent('Project Demo Click', { project: project.title }); }}>{project.liveDemoText}</a>
+                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer" onClick={(e) => { e.stopPropagation(); trackEvent('Project GitHub Click', { project: project.title }); }}>{project.githubText}</a>
                 </div>
               </div>
             ) : (
@@ -78,6 +91,15 @@ const Projects = () => {
         <span className="page-indicator">{`Page ${currentPage + 1} of ${totalPages}`}</span>
         <button onClick={handleNextPage} disabled={currentPage === totalPages - 1} className="pagination-button">{'>'}</button>
       </div>
+
+      <ModalWindow show={showModal} handleClose={handleCloseModal} title={selectedProject ? selectedProject.title : ''}>
+        {selectedProject && (
+          <div>
+            <p>{selectedProject.description}</p>
+            {/* You can add more project details here if needed */}
+          </div>
+        )}
+      </ModalWindow>
     </div>
   );
 };
