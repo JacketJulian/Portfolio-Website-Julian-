@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { portfolioData } from '../../data';
 import './DesktopAbout.css';
 import { theme } from '../../theme';
+import ModalWindow from '../ModalWindow/ModalWindow';
 
 const DesktopAbout = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
+
   const aboutImagePlaceholderStyle = {
     backgroundColor: theme.colors.white,
     border: `5px solid ${theme.colors.white}`,
@@ -24,6 +30,7 @@ const DesktopAbout = () => {
           </div>
           <div className="about-buttons">
             <a href={portfolioData.about.resumeLink} className="about-action-button about-resume-button">{portfolioData.about.downloadText}</a>
+            <button className="about-action-button" onClick={handleShow}>Open Modal</button>
             <div className="social-links-about">
               {portfolioData.socialLinks.map((link, index) => (
                 <a href={link.url} key={index} target="_blank" rel="noopener noreferrer" className="about-action-button social-button">{link.name}</a>
@@ -32,6 +39,10 @@ const DesktopAbout = () => {
           </div>
         </div>
       </div>
+      <ModalWindow show={showModal} handleClose={handleClose} title="My Modal Title">
+        <p>This is the content of the modal window.</p>
+        <p>You can put any React components or HTML elements here.</p>
+      </ModalWindow>
     </div>
   );
 };

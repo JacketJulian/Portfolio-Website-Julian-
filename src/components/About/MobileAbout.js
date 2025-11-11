@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { portfolioData } from '../../data';
 import './MobileAbout.css';
 import { theme } from '../../theme';
+import ModalWindow from '../ModalWindow/ModalWindow';
 
 const MobileAbout = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
+
   const aboutImagePlaceholderStyle = {
     backgroundColor: theme.colors.white,
     border: `5px solid ${theme.colors.white}`,
@@ -23,8 +29,13 @@ const MobileAbout = () => {
             <p style={{ color: theme.colors.white }}>{portfolioData.about.description}</p>
           </div>
           <a href={portfolioData.about.resumeLink} className="about-resume-button" style={{ padding: '10px 20px', borderRadius: '20px', textDecoration: 'none', fontWeight: 'normal', marginTop: '20px', display: 'inline-block' }}>{portfolioData.about.downloadText}</a>
+          <button className="about-action-button" onClick={handleShow} style={{ marginTop: '20px', marginLeft: '10px', padding: '10px 20px', borderRadius: '20px', textDecoration: 'none', fontWeight: 'normal', display: 'inline-block' }}>Open Modal</button>
         </div>
       </div>
+      <ModalWindow show={showModal} handleClose={handleClose} title="My Mobile Modal Title">
+        <p>This is the content of the modal window for mobile.</p>
+        <p>You can put any React components or HTML elements here.</p>
+      </ModalWindow>
     </div>
   );
 };
