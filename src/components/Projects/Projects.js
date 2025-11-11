@@ -75,10 +75,6 @@ const Projects = () => {
                 </div>
                 <h1 style={titleStyle}>{project.title}</h1>
                 <p style={descriptionStyle}>{project.description}</p>
-                <div className="project-links">
-                  <a href={project.demoLink} target="_blank" rel="noopener noreferrer" onClick={(e) => { e.stopPropagation(); trackEvent('Project Demo Click', { project: project.title }); }}>{project.liveDemoText}</a>
-                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer" onClick={(e) => { e.stopPropagation(); trackEvent('Project GitHub Click', { project: project.title }); }}>{project.githubText}</a>
-                </div>
               </div>
             ) : (
               <div className="project-card-placeholder" key={index}></div>
@@ -96,7 +92,48 @@ const Projects = () => {
         {selectedProject && (
           <div>
             <p>{selectedProject.description}</p>
-            {/* You can add more project details here if needed */}
+            <div className="modal-project-links" style={{ marginTop: '20px', display: 'flex', justifyContent: 'space-around' }}>
+              <a
+                href={selectedProject.demoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => { e.stopPropagation(); trackEvent('Project Demo Click', { project: selectedProject.title }); }}
+                style={{
+                  textDecoration: 'none',
+                  margin: '0 0.625rem',
+                  fontWeight: 'normal',
+                  display: 'inline-block',
+                  backgroundColor: '#1CA4ED',
+                  color: '#fff',
+                  padding: '0.3125rem 1.25rem',
+                  borderRadius: '1.25rem',
+                  border: '1px solid #1CA4ED',
+                  transition: 'background-color 0.3s ease, color 0.3s ease',
+                }}
+              >
+                {selectedProject.liveDemoText}
+              </a>
+              <a
+                href={selectedProject.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => { e.stopPropagation(); trackEvent('Project GitHub Click', { project: selectedProject.title }); }}
+                style={{
+                  textDecoration: 'none',
+                  margin: '0 0.625rem',
+                  fontWeight: 'normal',
+                  display: 'inline-block',
+                  backgroundColor: '#1CA4ED',
+                  color: '#fff',
+                  padding: '0.3125rem 1.25rem',
+                  borderRadius: '1.25rem',
+                  border: '1px solid #1CA4ED',
+                  transition: 'background-color 0.3s ease, color 0.3s ease',
+                }}
+              >
+                {selectedProject.githubText}
+              </a>
+            </div>
           </div>
         )}
       </ModalWindow>
