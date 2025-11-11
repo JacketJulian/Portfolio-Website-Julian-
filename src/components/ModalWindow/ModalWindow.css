@@ -45,22 +45,46 @@
 }
 
 .modal-header .close {
-  padding: 1rem 1rem;
-  margin: -1rem -1rem -1rem auto;
-  background-color: transparent;
-  border: 0;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1;
-  color: #000;
-  text-shadow: 0 1px 0 #fff;
-  opacity: .5;
+  width: 20px;
+  height: 20px;
+  background-color: #ff5f56; /* Red circle */
+  border-radius: 50%;
+  border: none;
+  opacity: 1;
+  position: relative;
+  cursor: pointer;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  transition: background-color 0.15s ease-in-out;
+}
+
+.modal-header .close:before,
+.modal-header .close:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px; /* Width of the 'x' lines */
+  height: 2px; /* Thickness of the 'x' lines */
+  background-color: transparent; /* Hidden by default */
+  transition: background-color 0.15s ease-in-out;
+}
+
+.modal-header .close:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.modal-header .close:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .modal-header .close:hover {
-  color: #000;
-  text-decoration: none;
-  opacity: .75;
+  background-color: #e0443e; /* Darker red on hover */
+}
+
+.modal-header .close:hover:before,
+.modal-header .close:hover:after {
+  background-color: #470000; /* Dark 'x' on hover */
 }
 
 .modal-body {
