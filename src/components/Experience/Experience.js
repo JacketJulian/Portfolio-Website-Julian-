@@ -1,11 +1,8 @@
 import React from 'react';
 import { portfolioData } from '../../data';
 import './Experience.css';
-import { useInView } from '../../hooks/useInView';
 
 const Experience = () => {
-  const [ref, inView] = useInView();
-
   // Sort jobs by date in descending order (most recent first)
   const sortedJobs = [...portfolioData.experience.jobs].sort((a, b) => {
     // Assuming date format is "YYYY - YYYY" or "YYYY"
@@ -22,7 +19,7 @@ const Experience = () => {
   });
 
   return (
-    <div ref={ref} className={`experience-container fade-in-section ${inView ? 'is-visible' : ''}`} id="experience" data-testid="experience-section">
+    <div className="experience-container" id="experience" data-testid="experience-section">
       <h1 className="experience-heading">{portfolioData.headings.experience}</h1>
       <div className="experience-list">
         {sortedJobs.map((job, index) => (

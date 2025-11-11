@@ -1,19 +1,16 @@
 import React from 'react';
 import { portfolioData } from '../../data';
 import './DesktopAbout.css';
-import { useInView } from '../../hooks/useInView';
 import { theme } from '../../theme';
 
 const DesktopAbout = () => {
-  const [ref, inView] = useInView();
-
   const aboutImagePlaceholderStyle = {
     backgroundColor: theme.colors.white,
     border: `5px solid ${theme.colors.white}`,
   };
 
   return (
-    <div ref={ref} className={`about-container fade-in-section ${inView ? 'is-visible' : ''}`} id="about" data-testid="about-section">
+    <div className="about-container" id="about" data-testid="about-section">
       <div className="about-content">
         <div className="about-image-placeholder" style={aboutImagePlaceholderStyle}>
           <img src={portfolioData.profileImage} alt="Your Profile" />

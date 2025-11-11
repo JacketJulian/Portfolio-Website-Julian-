@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App app-fade-in">
       <Navbar />
       <About />
       <Projects />

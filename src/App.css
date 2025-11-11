@@ -5,14 +5,15 @@
   font-family: 'Encode Sans Expanded', sans-serif;
 }
 
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(1.25rem);
-  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
-  will-change: opacity, transform;
+.app-fade-in {
+  animation: fadeIn 1.5s ease-in-out;
 }
 
-.fade-in-section.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

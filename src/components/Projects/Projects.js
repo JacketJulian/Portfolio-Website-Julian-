@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../../data';
 import './Projects.css';
-import { useInView } from '../../hooks/useInView';
 import { theme } from '../../theme';
 import trackEvent from '../../utils/analytics';
 
 const Projects = () => {
-  const [ref, inView] = useInView();
   const [currentPage, setCurrentPage] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const projectsPerPage = 3;
@@ -52,7 +50,7 @@ const Projects = () => {
   }
 
   return (
-    <div ref={ref} className={`projects-container fade-in-section ${inView ? 'is-visible' : ''}`} id="projects" data-testid="projects-section">
+    <div className="projects-container" id="projects" data-testid="projects-section">
       <h1 className="projects-heading section-title-bubble">{portfolioData.projects.title}</h1>
       <div className="projects-grid-container">
         <div className={`projects-grid ${isTransitioning ? 'transitioning' : ''}`}>

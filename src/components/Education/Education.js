@@ -1,11 +1,8 @@
 import React from 'react';
 import { portfolioData } from '../../data';
 import './Education.css';
-import { useInView } from '../../hooks/useInView';
 
 const Education = () => {
-  const [ref, inView] = useInView();
-
   // Sort degrees by date in descending order (most recent first)
   const sortedDegrees = [...portfolioData.education.degrees].sort((a, b) => {
     // Assuming date format is "YYYY - YYYY" or "YYYY"
@@ -22,7 +19,7 @@ const Education = () => {
   });
 
   return (
-    <div ref={ref} className={`education-container fade-in-section ${inView ? 'is-visible' : ''}`} id="education" data-testid="education-section">
+    <div className="education-container" id="education" data-testid="education-section">
       <h1 className="education-heading section-title-bubble">{portfolioData.education.title}</h1>
       <div className="education-speech-bubble">
         <h3>{portfolioData.education.coursesTitle}</h3>
