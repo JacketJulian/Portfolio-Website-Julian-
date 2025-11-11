@@ -25,7 +25,7 @@ const Experience = () => {
         {sortedJobs.map((job, index) => (
           <div className="experience-item" key={index}>
             <div className="experience-header">
-              <img src={job.logo} alt={job.companyName} className="experience-logo" />
+              <img src={job.logo} alt={job.companyName} className="experience-logo" loading="lazy" />
               <div className="experience-details">
                 <h2>{job.companyName}</h2>
                 <h3>{job.jobTitle}</h3>

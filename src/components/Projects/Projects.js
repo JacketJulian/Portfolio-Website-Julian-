@@ -58,7 +58,7 @@ const Projects = () => {
             project ? (
               <div className="project-card" key={index}>
                 <div className="project-image-container">
-                  <img src={project.image} alt={project.title} className="project-image" />
+                  <img src={project.image} alt={project.title} className="project-image" loading="lazy" />
                 </div>
                 <h1 style={titleStyle}>{project.title}</h1>
                 <p style={descriptionStyle}>{project.description}</p>

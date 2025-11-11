@@ -33,7 +33,7 @@ const Education = () => {
         {sortedDegrees.map((edu, index) => (
           <div className="education-item" key={index}>
             <div className="education-header">
-              <img src={edu.logo} alt={edu.institutionName} className="education-logo" />
+              <img src={edu.logo} alt={edu.institutionName} className="education-logo" loading="lazy" />
               <div className="education-details">
                 <h2>{edu.institutionName}</h2>
                 <h3>{edu.degree}</h3>

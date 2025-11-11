@@ -13,7 +13,7 @@ const DesktopAbout = () => {
     <div className="about-container" id="about" data-testid="about-section">
       <div className="about-content">
         <div className="about-image-placeholder" style={aboutImagePlaceholderStyle}>
-          <img src={portfolioData.profileImage} alt="Your Profile" />
+          <img src={portfolioData.profileImage} alt="Your Profile" loading="lazy" />
         </div>
         <div className="about-text-wrapper">
           <div className="about-text-content">
