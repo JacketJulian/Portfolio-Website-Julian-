@@ -5,7 +5,6 @@ import About from './components/About/About';
 import Projects from './components/Projects/Projects';
 import Experience from './components/Experience/Experience';
 import Education from './components/Education/Education';
-import Contact from './components/Contact/Contact';
 import './App.css';
 import { theme } from './theme';
 import trackEvent from './utils/analytics';
@@ -23,7 +22,6 @@ function App() {
       <Projects />
       <Experience />
       <Education />
-      <Contact />
     </div>
   );
 }

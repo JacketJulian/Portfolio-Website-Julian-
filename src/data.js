@@ -18,10 +18,6 @@ export const portfolioData = {
     {
       name: "Education",
       url: "education"
-    },
-    {
-      name: "Contact",
-      url: "contact"
     }
   ],
   about: {
@@ -117,20 +113,16 @@ export const portfolioData = {
       }
     ]
   },
-  contact: {
-    title: "Contact Me 💬",
-    description: "I'm currently open to new opportunities. Connect with me on social media.",
-    socialLinks: [
-      {
-        name: "LinkedIn",
-        url: "https://www.linkedin.com/in/julian-mangual-949a0622b/"
-      },
-      {
-        name: "GitHub",
-        url: "https://github.com/JacketJulian/"
-      }
-    ]
-  },
+  socialLinks: [
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/julian-mangual-949a0622b/"
+    },
+    {
+      name: "GitHub",
+      url: "https://github.com/JacketJulian/"
+    }
+  ],
   colors: {
     primary: '#3B3B3B',
     bubbleBlue: '#1CA4ED',

@@ -22,7 +22,14 @@ const DesktopAbout = () => {
             <p className="intro-title" style={{ color: theme.colors.white }}>{portfolioData.title}</p>
             <p style={{ color: theme.colors.white }}>{portfolioData.about.description}</p>
           </div>
-          <a href={portfolioData.about.resumeLink} className="about-resume-button" style={{ padding: '10px 20px', borderRadius: '20px', textDecoration: 'none', fontWeight: 'normal', marginTop: '20px', display: 'inline-block' }}>{portfolioData.about.downloadText}</a>
+          <div className="about-buttons">
+            <a href={portfolioData.about.resumeLink} className="about-action-button about-resume-button">{portfolioData.about.downloadText}</a>
+            <div className="social-links-about">
+              {portfolioData.socialLinks.map((link, index) => (
+                <a href={link.url} key={index} target="_blank" rel="noopener noreferrer" className="about-action-button social-button">{link.name}</a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -83,11 +83,17 @@
   margin: 0 0.625rem;
   font-weight: normal;
   display: inline-block;
-  background-color: #1CA4ED;
-  color: #fff;
+  background-color: transparent;
+  color: #1CA4ED;
   padding: 0.3125rem 1.25rem;
   border-radius: 1.25rem;
-  transition: none;
+  border: 1px solid #1CA4ED;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-links a:hover {
+  background-color: #1CA4ED;
+  color: #fff;
 }
 
 .project-card h1 {
