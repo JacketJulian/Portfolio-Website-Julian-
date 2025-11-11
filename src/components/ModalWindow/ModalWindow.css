@@ -42,6 +42,28 @@
   margin-bottom: 0;
   line-height: 1.5;
   font-size: 1.25rem;
+  flex-grow: 1; /* Allow title to grow */
+  min-width: 0; /* Allow title to shrink */
+  margin-right: 10px; /* Space between title and close button */
+}
+
+@media (max-width: 768px) {
+  .modal-main {
+    width: 90%; /* Make modal wider on small screens */
+    padding: 15px;
+  }
+
+  .modal-header {
+    flex-wrap: nowrap; /* Prevent wrapping of title and close button */
+  }
+
+  .modal-title {
+    font-size: 1rem; /* Smaller font size for title on mobile */
+  }
+
+  .modal-header .close {
+    flex-shrink: 0; /* Prevent close button from shrinking */
+  }
 }
 
 .modal-header .close {
