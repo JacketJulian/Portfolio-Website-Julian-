@@ -114,7 +114,7 @@
 }
 
 .about-image-placeholder:hover {
-  transform: rotate(5deg); /* Rotate on hover */
+  transform: rotate(30deg); /* Rotate on hover */
 }
 
 .about-image-placeholder img {
