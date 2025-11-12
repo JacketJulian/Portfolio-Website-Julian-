@@ -5,7 +5,7 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 1050; /* Bootstrap's modal-backdrop z-index */
+  z-index: 1050;
 }
 
 .modal-main {
@@ -32,53 +32,54 @@
 
 .modal-header {
   display: flex;
-  justify-content: flex-start; /* Align items to the left */
+  justify-content: flex-start;
   align-items: center;
   border-bottom: 1px solid #dee2e6;
   padding-bottom: 10px;
   margin-bottom: 15px;
+  transition: padding-bottom 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .modal-title {
   margin-bottom: 0;
   line-height: 1.5;
   font-size: 1.25rem;
-  flex-grow: 1; /* Allow title to grow */
-  min-width: 0; /* Allow title to shrink */
-  margin-right: 10px; /* Space between title and close button */
-  text-align: center; /* Center the text */
+  flex-grow: 1;
+  min-width: 0;
+  margin-right: 10px;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
   .modal-main {
-    width: 90%; /* Make modal wider on small screens */
+    width: 90%;
     padding: 15px;
   }
 
   .modal-header {
-    flex-wrap: nowrap; /* Prevent wrapping of title and close button */
+    flex-wrap: nowrap;
   }
 
   .modal-title {
-    font-size: 1rem; /* Smaller font size for title on mobile */
+    font-size: 1rem;
   }
 
   .modal-header .close {
-    flex-shrink: 0; /* Prevent close button from shrinking */
+    flex-shrink: 0;
   }
 }
 
 .modal-header .close {
   width: 20px;
   height: 20px;
-  background-color: #ff5f56; /* Red circle */
+  background-color: #ff5f56;
   border-radius: 50%;
   border: none;
   opacity: 1;
   position: relative;
   cursor: pointer;
-  margin: 0 10px 0 0; /* Add margin-right for spacing */
-  padding: 0; /* Remove default padding */
+  margin: 0 10px 0 0;
+  padding: 0;
   transition: background-color 0.15s ease-in-out;
 }
 
@@ -88,9 +89,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 10px; /* Width of the 'x' lines */
-  height: 2px; /* Thickness of the 'x' lines */
-  background-color: transparent; /* Hidden by default */
+  width: 10px;
+  height: 2px;
+  background-color: transparent;
   transition: background-color 0.15s ease-in-out;
 }
 
@@ -103,18 +104,19 @@
 }
 
 .modal-header .close:hover {
-  background-color: #e0443e; /* Darker red on hover */
+  background-color: #e0443e;
 }
 
 .modal-header .close:hover:before,
 .modal-header .close:hover:after {
-  background-color: #470000; /* Dark 'x' on hover */
+  background-color: #470000;
 }
 
 .modal-body {
   position: relative;
   flex: 1 1 auto;
   padding: 1rem;
+  transition: margin-top 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .modal-footer {
@@ -129,7 +131,6 @@
 }
 
 .modal-footer > * {
-  /* Removed margin as gap handles spacing */
 }
 
 .btn {
@@ -202,6 +203,38 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     margin: 0 auto;
+    transition: all 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+    height: auto;
+    min-height: 36px;
+  }
+
+  /* When title has overflow, show visual indicator */
+  .modal-desktop .modal-title.has-overflow {
+    position: relative;
+  }
+
+  .modal-desktop .modal-title.has-overflow::after {
+    content: '⌄';
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    color: #666;
+    transition: transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+
+  /* Expanded state */
+  .modal-desktop .modal-title.expanded {
+    white-space: normal;
+    overflow: visible;
+    height: auto;
+    padding-right: 30px;
+    line-height: 1.4;
+  }
+
+  .modal-desktop .modal-title.expanded::after {
+    transform: translateY(-50%) rotate(180deg);
   }
   
   .modal-desktop .modal-body {
