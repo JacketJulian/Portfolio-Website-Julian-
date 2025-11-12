@@ -46,6 +46,7 @@
   flex-grow: 1; /* Allow title to grow */
   min-width: 0; /* Allow title to shrink */
   margin-right: 10px; /* Space between title and close button */
+  text-align: center; /* Center the text */
 }
 
 @media (max-width: 768px) {
