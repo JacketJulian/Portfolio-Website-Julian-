@@ -63,6 +63,7 @@ const DesktopNavbar = () => {
                 onSetActive={handleSetActive}
                 spy={true}
                 hashSpy={true}
+                offset={-500}
               >
                 {link.name}
               </Link>
