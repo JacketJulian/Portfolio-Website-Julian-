@@ -125,7 +125,7 @@ export const portfolioData = {
   ],
   colors: {
     primary: '#3B3B3B',
-    bubbleBlue: '#1CA4ED',
+    bubbleBlue: '#2294fb',
     tertiary: '#191970',
     white: '#fff',
     skyBlue: '#87CEEB',

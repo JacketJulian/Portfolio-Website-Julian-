@@ -11,7 +11,7 @@
   position: absolute;
   top: 6.25rem;
   right: 1.875rem;
-  background-color: #1CA4ED;
+  background-color: #2294fb;
   color: #fff;
   padding: 1.25rem;
   border-radius: 1.25rem;
@@ -28,7 +28,7 @@
   transform: translateX(-50%);
   border-width: 0.625rem;
   border-style: solid;
-  border-color: #1CA4ED transparent transparent transparent;
+  border-color: #2294fb transparent transparent transparent;
 }
 
 .education-speech-bubble h3 {
@@ -53,7 +53,7 @@
   font-size: 2.25rem;
   margin-bottom: 1.5rem;
   font-weight: bold;
-  background-color: #1CA4ED;
+  background-color: #2294fb;
   color: #fff;
   padding: 0.625rem 1.25rem;
   border-radius: 6.25rem;
