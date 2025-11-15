@@ -65,15 +65,15 @@
 .placeholder-title {
   height: 4.5rem;
   background-color: #e0e0e0;
+  margin: 1.05rem 0;
   border-radius: 0.5rem;
-  margin: 1.25rem 1rem 1rem 1rem;
 }
 
 .placeholder-description {
   background-color: #2294fb;
   border-radius: 20px;
-  padding: 15px;
-  margin: 0 1.25rem 1.5rem 1.25rem;
+  padding: 0 1.25rem;
+  margin-bottom: 0.5rem;
   height: 7.5rem;
 }
 

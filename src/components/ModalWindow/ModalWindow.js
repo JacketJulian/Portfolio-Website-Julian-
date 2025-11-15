@@ -43,9 +43,15 @@ const ModalWindow = ({ show, handleClose, children, title }) => {
   const modalClassName = isMobile ? "modal-main modal-mobile" : "modal-main modal-desktop";
   const titleClassName = `modal-title${isExpanded ? ' expanded' : ''}${hasOverflow ? ' has-overflow' : ''}`;
 
+  const handleBackdropClick = (e) => {
+    if (e.target.className.includes('modal display-block')) {
+      handleClose();
+    }
+  };
+
   return (
-    <div className={showHideClassName}>
-      <section className={modalClassName}>
+    <div className={showHideClassName} onClick={handleBackdropClick}>
+      <section className={modalClassName} onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <button type="button" className="close" onClick={handleClose}>
           </button>
