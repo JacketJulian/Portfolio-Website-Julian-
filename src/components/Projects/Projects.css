@@ -43,6 +43,38 @@
   background-color: transparent;
   border: none;
   box-shadow: none;
+  border-radius: 0.625rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 28.125rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card-placeholder:hover {
+  transform: translateY(-0.625rem);
+}
+
+.placeholder-image {
+  height: 12.5rem;
+  background-color: #ffffff;
+  border-radius: 0.625rem;
+}
+
+.placeholder-title {
+  height: 4.5rem;
+  background-color: #e0e0e0;
+  border-radius: 0.5rem;
+  margin: 1.25rem 1rem 1rem 1rem;
+}
+
+.placeholder-description {
+  background-color: #2294fb;
+  border-radius: 20px;
+  padding: 15px;
+  margin: 0 1.25rem 1.5rem 1.25rem;
+  height: 7.5rem;
 }
 
 .project-card {
@@ -109,6 +141,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
+  padding: 0 1rem;
+  line-height: 1.4;
 }
 
 .project-card p {

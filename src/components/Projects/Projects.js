@@ -10,7 +10,11 @@ const Projects = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
   const projectsPerPage = 3;
+
+  const minSwipeDistance = 50;
 
   const titleStyle = {
     fontWeight: 'bold',
@@ -53,6 +57,29 @@ const Projects = () => {
     setSelectedProject(null);
   };
 
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe && currentPage < totalPages - 1) {
+      handleNextPage();
+    }
+    if (isRightSwipe && currentPage > 0) {
+      handlePrevPage();
+    }
+  };
+
   const startIndex = currentPage * projectsPerPage;
   const endIndex = startIndex + projectsPerPage;
   let currentProjects = portfolioData.projects.projects.slice(startIndex, endIndex);
@@ -65,7 +92,7 @@ const Projects = () => {
   return (
     <div className="projects-container" id="projects" data-testid="projects-section">
       <h1 className="projects-heading section-title-bubble">{portfolioData.projects.title}</h1>
-      <div className="projects-grid-container">
+      <div className="projects-grid-container" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
         <div className={`projects-grid ${isTransitioning ? 'transitioning' : ''}`}>
           {currentProjects.map((project, index) => (
             project ? (
@@ -77,7 +104,11 @@ const Projects = () => {
                 <p style={descriptionStyle}>{project.description}</p>
               </div>
             ) : (
-              <div className="project-card-placeholder" key={index}></div>
+              <div className="project-card-placeholder" key={index}>
+                <div className="placeholder-image"></div>
+                <div className="placeholder-title"></div>
+                <div className="placeholder-description"></div>
+              </div>
             )
           ))}
         </div>
@@ -92,7 +123,7 @@ const Projects = () => {
         {selectedProject && (
           <div>
             <p>{selectedProject.description}</p>
-            <div className="modal-project-links" style={{ marginTop: '20px', display: 'flex', justifyContent: 'space-around' }}>
+            <div className="modal-project-links" style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}>
               <a
                 href={selectedProject.demoLink}
                 target="_blank"
@@ -112,26 +143,6 @@ const Projects = () => {
                 }}
               >
                 {selectedProject.liveDemoText}
-              </a>
-              <a
-                href={selectedProject.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => { e.stopPropagation(); trackEvent('Project GitHub Click', { project: selectedProject.title }); }}
-                style={{
-                  textDecoration: 'none',
-                  margin: '0 0.625rem',
-                  fontWeight: 'normal',
-                  display: 'inline-block',
-                  backgroundColor: '#2294fb',
-                  color: '#fff',
-                  padding: '0.3125rem 1.25rem',
-                  borderRadius: '1.25rem',
-                  border: '1px solid #2294fb',
-                  transition: 'background-color 0.3s ease, color 0.3s ease',
-                }}
-              >
-                {selectedProject.githubText}
               </a>
             </div>
           </div>
