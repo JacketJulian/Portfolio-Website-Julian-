@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { portfolioData } from '../../data';
 import './MobileAbout.css';
 import { theme } from '../../theme';
 
 const MobileAbout = () => {
+  const [isStatusExpanded, setIsStatusExpanded] = useState(true);
+
   const aboutImagePlaceholderStyle = {
     backgroundColor: theme.colors.white,
     border: `5px solid ${theme.colors.white}`,
+  };
+
+  const handleStatusClick = () => {
+    setIsStatusExpanded(!isStatusExpanded);
   };
 
   return (
@@ -14,6 +20,14 @@ const MobileAbout = () => {
       <div className="about-content">
         <div className="about-image-placeholder" style={aboutImagePlaceholderStyle}>
           <img src={portfolioData.profileImage} alt="Your Profile" loading="lazy" />
+          {portfolioData.about.status && (
+            <div 
+              className={`status-indicator ${isStatusExpanded ? 'expanded' : ''}`}
+              onClick={handleStatusClick}
+            >
+              <span className="status-text">{portfolioData.about.status}</span>
+            </div>
+          )}
         </div>
         <div className="about-text-wrapper">
           <div className="about-text-content">

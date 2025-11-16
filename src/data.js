@@ -1,6 +1,6 @@
 export const portfolioData = {
   name: "Julian Mangual",
-  title: "🧑🏻‍💻 Software Engineer | Full-Stack Developer",
+  title: "🧑🏻‍💻 Software Engineer | Data | Infrastructure",
   profileImage: "https://i.imgur.com/P4RN7Fb.png", // Add your profile image URL here
   navLinks: [
     {
@@ -23,7 +23,8 @@ export const portfolioData = {
   about: {
     title: "About Me",
     resumeLink: "https://drive.google.com/uc?export=download&id=1cMso5a9kgt-pFG5xa7Qe2LItPR-dsXue", // Direct download link to your resume
-    downloadText: "📋 Download Resume"
+    downloadText: "📋 Download Resume",
+    status: "Open for Interviews"
   },
   projects: {
     title: "My Projects 🧑🏻‍💻",
@@ -31,7 +32,8 @@ export const portfolioData = {
       {
         title: 'Mobile Shopping App (Target-Inspired UI)',
         description: 'E-commerce mobile app built with React Native and Typescript simulating a real-world storefront with cart tracking, sessions, and RESTful APIs',
-        demoLink: '#',
+        demoLink: 'https://youtu.be/6tOS1sOhP3M',
+        videoUrl: 'https://i.imgur.com/HUIV022.mp4',
         githubLink: '#',
         image: 'https://i.imgur.com/WKiT4yX.png',
         liveDemoText: "Live Demo",
@@ -40,7 +42,8 @@ export const portfolioData = {
       {
         title: 'Cross-Platform Music Streaming App (Spotify-Inspired UI)',
         description: 'Real-time music streaming app front end built with React Native, simulating Spotify-like playback, dynamic queueing, and backend security features with a responsive, accessible UI',
-        demoLink: '#',
+        demoLink: 'https://youtu.be/szzBixBjnZo',
+        videoUrl: 'https://i.imgur.com/MrYuKr9.mp4',
         githubLink: '#',
         image: 'https://i.imgur.com/HUjnB7j.png',
         liveDemoText: "Live Demo",
@@ -49,7 +52,8 @@ export const portfolioData = {
       {
         title: 'Weather App',
         description: 'Cross-platform weather application built with React Native and TypeScript, featuring real-time forecast data, modular components, and mobile-optimized UI.',
-        demoLink: '#',
+        demoLink: 'https://youtu.be/WGAw3S2-gz0?si=OQ9VnJ1Rp6OB33JP',
+        videoUrl: 'https://i.imgur.com/JZE2reh.mp4',
         githubLink: '#',
         image: 'https://i.imgur.com/Ml36i08.pngmy',
         liveDemoText: "Live Demo",
@@ -58,7 +62,8 @@ export const portfolioData = {
       {
         title: 'Personal Portfolio Website',
         description: 'Responsive portfolio website built with React.js, showcasing projects, experience, and education with smooth scrolling and modern design.',
-        demoLink: '#',
+        demoLink: 'https://youtu.be/VB9gK5rEgqU',
+        videoUrl: 'https://i.imgur.com/kWEdpun.mp4',
         githubLink: 'https://github.com/JacketJulian/Portfolio-Website-Julian-.git',
         image: 'https://i.imgur.com/d43g2EV.jpeg',
         liveDemoText: "Live Demo",

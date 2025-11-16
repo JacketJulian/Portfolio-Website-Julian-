@@ -14,6 +14,11 @@ const DesktopAbout = () => {
       <div className="about-content">
         <div className="about-image-placeholder" style={aboutImagePlaceholderStyle}>
           <img src={portfolioData.profileImage} alt="Your Profile" loading="lazy" />
+          {portfolioData.about.status && (
+            <div className="status-indicator">
+              <span className="status-text">{portfolioData.about.status}</span>
+            </div>
+          )}
         </div>
         <div className="about-text-wrapper">
           <div className="about-text-content">

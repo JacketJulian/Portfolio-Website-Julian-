@@ -12,6 +12,7 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+  const [expandedBubbles, setExpandedBubbles] = useState(new Set());
   const projectsPerPage = 3;
 
   const minSwipeDistance = 50;
@@ -57,6 +58,24 @@ const Projects = () => {
     setSelectedProject(null);
   };
 
+  const handleBubbleClick = (e, projectIndex) => {
+    e.stopPropagation();
+    const newExpandedBubbles = new Set(expandedBubbles);
+    const bubbleKey = `${currentPage}-${projectIndex}`;
+    
+    if (newExpandedBubbles.has(bubbleKey)) {
+      newExpandedBubbles.delete(bubbleKey);
+    } else {
+      newExpandedBubbles.add(bubbleKey);
+    }
+    
+    setExpandedBubbles(newExpandedBubbles);
+  };
+
+  const handleCardClick = (project) => {
+    handleShowModal(project);
+  };
+
   const onTouchStart = (e) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
@@ -96,12 +115,18 @@ const Projects = () => {
         <div className={`projects-grid ${isTransitioning ? 'transitioning' : ''}`}>
           {currentProjects.map((project, index) => (
             project ? (
-              <div className="project-card" key={index} onClick={() => handleShowModal(project)}>
-                <div className="project-image-container">
+              <div className="project-card" key={index}>
+                <div className="project-image-container" onClick={() => handleCardClick(project)}>
                   <img src={project.image} alt={project.title} className="project-image" loading="lazy" />
                 </div>
-                <h1 style={titleStyle}>{project.title}</h1>
-                <p style={descriptionStyle}>{project.description}</p>
+                <h1 style={titleStyle} onClick={() => handleCardClick(project)}>{project.title}</h1>
+                <p 
+                  style={descriptionStyle} 
+                  className={expandedBubbles.has(`${currentPage}-${index}`) ? 'expanded' : ''}
+                  onClick={(e) => handleBubbleClick(e, index)}
+                >
+                  {project.description}
+                </p>
               </div>
             ) : (
               <div className="project-card-placeholder" key={index}>
@@ -122,6 +147,18 @@ const Projects = () => {
       <ModalWindow show={showModal} handleClose={handleCloseModal} title={selectedProject ? selectedProject.title : ''}>
         {selectedProject && (
           <div>
+            {selectedProject.videoUrl && (
+              <div className="modal-video-container">
+                <video 
+                  controls 
+                  className="modal-video"
+                  preload="metadata"
+                >
+                  <source src={selectedProject.videoUrl} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            )}
             <p>{selectedProject.description}</p>
             <div className="modal-project-links" style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}>
               <a
