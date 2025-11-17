@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar/Navbar';
-import About from './components/About/About';
-import Projects from './components/Projects/Projects';
-import Experience from './components/Experience/Experience';
-import Education from './components/Education/Education';
+import About from './pages/About/About';
+import Projects from './pages/Projects/Projects';
+import Experience from './pages/Experience/Experience';
+import Education from './pages/Education/Education';
 import './App.css';
 import { theme } from './theme';
 import trackEvent from './utils/analytics';

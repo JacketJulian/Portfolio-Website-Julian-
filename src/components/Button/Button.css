@@ -1,0 +1,36 @@
+.ui-button {
+  padding: 0.625rem 1.0625rem;
+  border-radius: 1.25rem;
+  border: none;
+  font-weight: normal;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  transition: opacity 0.2s ease;
+}
+
+.ui-button:hover:not(.ui-button-disabled) {
+  opacity: 0.8;
+}
+
+.ui-button-primary {
+  background-color: #2294fb;
+  color: #fff;
+}
+
+.ui-button-secondary {
+  background-color: #fff;
+  color: #2294fb;
+  border: 2px solid #2294fb;
+}
+
+.ui-button-disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.ui-button-disabled:hover {
+  opacity: 0.6;
+}

@@ -3,7 +3,7 @@ import { portfolioData } from '../../data';
 import './Projects.css';
 import { theme } from '../../theme';
 import trackEvent from '../../utils/analytics';
-import ModalWindow from '../ModalWindow/ModalWindow';
+import ModalWindow from '../../components/ModalWindow/ModalWindow';
 
 const Projects = () => {
   const [currentPage, setCurrentPage] = useState(0);

@@ -1,0 +1,19 @@
+.ui-description {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.ui-description-bubble {
+  background-color: #2294fb;
+  border-radius: 1.25rem;
+  padding: 0.9375rem;
+  padding-top: 0.3125rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.ui-description-plain {
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
