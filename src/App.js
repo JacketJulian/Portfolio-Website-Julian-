@@ -5,6 +5,7 @@ import About from './pages/About/About';
 import Projects from './pages/Projects/Projects';
 import Experience from './pages/Experience/Experience';
 import Education from './pages/Education/Education';
+import AnalyticsAlert from './components/AnalyticsAlert/AnalyticsAlert';
 import './App.css';
 import { theme } from './theme';
 import trackEvent from './utils/analytics';
@@ -22,6 +23,7 @@ function App() {
       <Projects />
       <Experience />
       <Education />
+      <AnalyticsAlert />
     </div>
   );
 }
