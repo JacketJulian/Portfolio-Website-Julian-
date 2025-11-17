@@ -8,7 +8,7 @@ const EMOJI_POOL = [
 ];
 
 // Default emoji to return to
-const DEFAULT_EMOJI = '💼';
+const DEFAULT_EMOJI = '🤓';
 
 /**
  * Get a random emoji different from the current one
