@@ -1,18 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { portfolioData } from '../../data';
 import './MobileAbout.css';
 import { theme } from '../../theme';
+import { createEmojiClickHandler, DEFAULT_EMOJI } from '../../utils/emojiStatusHandler';
+import '../../components/EmojiStatus/EmojiStatus.css';
 
 const MobileAbout = () => {
   const [isStatusExpanded, setIsStatusExpanded] = useState(true);
+  const [currentEmoji, setCurrentEmoji] = useState(DEFAULT_EMOJI);
+  const [isAnimating, setIsAnimating] = useState(null);
+  const timeoutRef = useRef(null);
+  const handleEmojiClick = createEmojiClickHandler(setCurrentEmoji, setIsAnimating, timeoutRef);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const aboutImagePlaceholderStyle = {
     backgroundColor: theme.colors.white,
     border: `5px solid ${theme.colors.white}`,
   };
 
-  const handleStatusClick = () => {
-    setIsStatusExpanded(!isStatusExpanded);
+  const handleStatusClick = (e) => {
+    if (!e.target.classList.contains('emoji-status')) {
+      setIsStatusExpanded(!isStatusExpanded);
+    }
   };
 
   return (
@@ -25,6 +41,16 @@ const MobileAbout = () => {
               className={`status-indicator ${isStatusExpanded ? 'expanded' : ''}`}
               onClick={handleStatusClick}
             >
+              <div 
+                className={`emoji-status ${isAnimating || ''}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleEmojiClick(currentEmoji);
+                }}
+                style={{ fontSize: '1.2em', marginRight: '0.3em' }}
+              >
+                {currentEmoji}
+              </div>
               <span className="status-text">{portfolioData.about.status}</span>
             </div>
           )}

@@ -140,16 +140,7 @@
   opacity: 1;
 }
 
-.status-indicator::before {
-  content: '🤓';
-  font-size: 1.2rem;
-  margin-right: 8px;
-  transition: margin-right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
 
-.status-indicator.expanded::before {
-  margin-right: 8px;
-}
 
 .scroll-indicator {
   font-size: 3rem;

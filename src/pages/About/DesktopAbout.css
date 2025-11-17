@@ -170,12 +170,6 @@
   transition: opacity 0.15s ease;
 }
 
-.status-indicator::before {
-  content: '🤓';
-  font-size: 1.2rem;
-  margin-right: 8px;
-  transition: margin-right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
 
 .status-indicator:hover::before {
   margin-right: 8px;

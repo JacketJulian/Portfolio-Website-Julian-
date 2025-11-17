@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { portfolioData } from '../../data';
 import './DesktopAbout.css';
 import { theme } from '../../theme';
+import { createEmojiClickHandler, DEFAULT_EMOJI } from '../../utils/emojiStatusHandler';
+import '../../components/EmojiStatus/EmojiStatus.css';
 
 const DesktopAbout = () => {
+  const [currentEmoji, setCurrentEmoji] = useState(DEFAULT_EMOJI);
+  const [isAnimating, setIsAnimating] = useState(null);
+  const timeoutRef = useRef(null);
+  const handleEmojiClick = createEmojiClickHandler(setCurrentEmoji, setIsAnimating, timeoutRef);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
   const aboutImagePlaceholderStyle = {
     backgroundColor: theme.colors.white,
     border: `5px solid ${theme.colors.white}`,
@@ -16,6 +31,13 @@ const DesktopAbout = () => {
           <img src={portfolioData.profileImage} alt="Your Profile" loading="lazy" />
           {portfolioData.about.status && (
             <div className="status-indicator">
+              <div 
+                className={`emoji-status ${isAnimating || ''}`}
+                onClick={() => handleEmojiClick(currentEmoji)}
+                style={{ fontSize: '1.2em', marginRight: '0.3em' }}
+              >
+                {currentEmoji}
+              </div>
               <span className="status-text">{portfolioData.about.status}</span>
             </div>
           )}

@@ -1,0 +1,44 @@
+.emoji-status {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.emoji-status:hover {
+  transform: scale(1.1);
+}
+
+.emoji-status.slide-out {
+  animation: slideOutBlur 0.3s ease-out forwards;
+}
+
+.emoji-status.slide-in {
+  animation: slideInBlur 0.3s ease-out forwards;
+}
+
+@keyframes slideOutBlur {
+  0% {
+    transform: translateX(0) scale(1);
+    filter: blur(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(30px) scale(0.8);
+    filter: blur(8px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInBlur {
+  0% {
+    transform: translateX(-30px) scale(0.8);
+    filter: blur(8px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
