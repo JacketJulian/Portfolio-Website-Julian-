@@ -35,7 +35,7 @@ const DesktopNavbar = () => {
         targetPosition.current = {
           left: activeElement.offsetLeft - 10,
           width: activeElement.offsetWidth + 15,
-          height: activeElement.offsetHeight + 20,
+          height: activeElement.offsetHeight + 10,
         };
       }
     };
