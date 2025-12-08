@@ -6,18 +6,26 @@ import { createEmojiClickHandler, DEFAULT_EMOJI } from '../../utils/emojiStatusH
 import '../../components/EmojiStatus/EmojiStatus.css';
 
 const DesktopAbout = () => {
+  const [isStatusExpanded, setIsStatusExpanded] = useState(true);
   const [currentEmoji, setCurrentEmoji] = useState(DEFAULT_EMOJI);
   const [isAnimating, setIsAnimating] = useState(null);
   const timeoutRef = useRef(null);
   const handleEmojiClick = createEmojiClickHandler(setCurrentEmoji, setIsAnimating, timeoutRef);
 
   useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
+      return () => {
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+        }
+      };
+    }, []);
+
+    
+  const handleStatusClick = (e) => {
+    if (!e.target.classList.contains('emoji-status')) {
+      setIsStatusExpanded(!isStatusExpanded);
+    }
+  };
 
   const aboutImagePlaceholderStyle = {
     backgroundColor: theme.colors.white,
@@ -30,7 +38,8 @@ const DesktopAbout = () => {
         <div className="about-image-placeholder" style={aboutImagePlaceholderStyle}>
           <img src={portfolioData.profileImage} alt="Your Profile" loading="lazy" />
           {portfolioData.about.status && (
-            <div className="status-indicator">
+            <div className={`status-indicator ${isStatusExpanded ? 'expanded' : ''}`}
+              onClick={handleStatusClick}>
               <div 
                 className={`emoji-status ${isAnimating || ''}`}
                 onClick={() => handleEmojiClick(currentEmoji)}
