@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { portfolioData } from '../../data';
+import { motion } from 'framer-motion';
 import './MobileAbout.css';
 import { theme } from '../../theme';
 import { createEmojiClickHandler, DEFAULT_EMOJI } from '../../utils/emojiStatusHandler';
@@ -34,19 +35,19 @@ const MobileAbout = () => {
   return (
     <div className="about-container" id="about" data-testid="about-section">
       <div className="about-content">
-        <div className="about-image-placeholder" style={aboutImagePlaceholderStyle}>
+        <motion.div 
+        className="about-image-placeholder" 
+        style={aboutImagePlaceholderStyle}
+        whileHover={{ rotate: 10 }}
+        transition={{ type: "tween", duration: 0.0001, ease: "easeInOut" }}
+        >
           <img src={portfolioData.profileImage} alt="Your Profile" loading="lazy" />
           {portfolioData.about.status && (
-            <div 
-              className={`status-indicator ${isStatusExpanded ? 'expanded' : ''}`}
-              onClick={handleStatusClick}
-            >
+            <div className={`status-indicator ${isStatusExpanded ? 'expanded' : ''}`}
+              onClick={handleStatusClick}>
               <div 
                 className={`emoji-status ${isAnimating || ''}`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleEmojiClick(currentEmoji);
-                }}
+                onClick={() => handleEmojiClick(currentEmoji)}
                 style={{ fontSize: '1.2em', marginRight: '0.3em' }}
               >
                 {currentEmoji}
@@ -54,14 +55,32 @@ const MobileAbout = () => {
               <span className="status-text">{portfolioData.about.status}</span>
             </div>
           )}
-        </div>
+        </motion.div>
         <div className="about-text-wrapper">
           <div className="about-text-content">
-            <h1 style={{ fontSize: '36px', marginBottom: '10px', color: theme.colors.white, fontWeight: 'bold' }}>👋 Hi, I'm</h1>
-            <h1 className="intro-name" style={{ color: theme.colors.white }}>{portfolioData.name}</h1>
-            <p className="intro-title" style={{ color: theme.colors.white }}>{portfolioData.title}</p>
-            <p style={{ color: theme.colors.white }}>{portfolioData.about.description}</p>
-          </div>
+  <h1 className="intro-name" style={{ fontSize: '2.5rem', marginBottom: '10px', color: theme.colors.white, fontWeight: 'bold', paddingRight: '2rem' }}>
+  <motion.span
+  style={{ display: 'inline-block', marginRight: '0.5rem' }}
+  initial={{ scale: 1 }}
+  animate={{
+    scale: [1, 1.5, 1.2, 1],
+    rotate: [0, 20, -10, 20, -5, 0],
+  }}
+  transition={{
+    scale: { times: [0, 0.2, 0.5, 1], duration: 2, ease: "easeInOut" },
+    rotate: { duration: 1.5, repeat: Infinity, repeatDelay: 0.5, ease: "easeInOut" }
+  }}
+  role="img"
+  aria-label="waving hand"
+>
+  👋
+</motion.span>
+    Hi, I'm
+  </h1>
+  <h1 className="intro-name" style={{ color: theme.colors.white }}>{portfolioData.name}</h1>
+  <p className="intro-title" style={{ color: theme.colors.white }}>{portfolioData.title}</p>
+  <p style={{ color: theme.colors.white }}>{portfolioData.about.description}</p>
+</div>
           <a href={portfolioData.about.resumeLink} className="about-resume-button" style={{ padding: '10px 20px', borderRadius: '20px', textDecoration: 'none', fontWeight: 'normal', marginTop: '20px', display: 'inline-block' }}>{portfolioData.about.downloadText}</a>
         </div>
       </div>
