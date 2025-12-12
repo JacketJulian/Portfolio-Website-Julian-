@@ -64,7 +64,7 @@ const DesktopAbout = () => {
   style={{ display: 'inline-block', marginRight: '0.5rem' }}
   initial={{ scale: 1 }}
   animate={{
-    scale: [1, 1.5, 1.2, 1],
+    scale: [1, 8, 1.2, 1],
     rotate: [0, 20, -10, 20, -5, 0],
   }}
   transition={{
