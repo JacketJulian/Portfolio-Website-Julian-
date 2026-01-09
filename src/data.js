@@ -69,12 +69,23 @@ export const portfolioData = {
         liveDemoText: "Live Demo",
         githubText: "GitHub",
       },
-    ]
-  },
-  headings: {
-    projects: "My Projects 🧑🏻‍💻",
-    experience: "My Experience 💼",
-    education: "My Education 👨🏻‍🎓",
+      {
+        title: 'MyndHaven - Mental Wellness Platform (In Development)',
+        description: "MyndHaven is a mobile app platform dedicated to supporting mental wellness, \
+        offering users tools, resources, and features to manage stress, build resilience, and prioritize their emotional well-being.To build anticipation and gather early \
+          feedback, I created myndhaven.com—a sleek, single-page waitlist landing site where interested users can join the early access list by submitting their email. The page \
+          highlights the app's upcoming features, mission, and vision while encouraging sign-ups to be among the first to experience the platform upon launch.",
+          demoLink: 'https://myndhaven.com',
+          videoUrl: 'https://i.imgur.com/Vyjihls.mp4',
+          liveDemoText: "Visit MyndHaven.com",
+          image: 'https://i.imgur.com/6Twvb9e.png',
+        }
+      ]
+    },
+    headings: {
+      projects: "My Projects 🧑🏻‍💻",
+      experience: "My Experience 💼",
+      education: "My Education 👨🏻‍🎓",
   },
   experience: {
     jobs: [
