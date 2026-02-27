@@ -12,9 +12,11 @@
   z-index: 999;
   transition: background-color 0.3s ease-in;
   border-radius: 1.5625rem;
+  padding-bottom: 3.5rem;
 }
 
 .navbar.active {
+  padding-bottom: 3.5rem;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(0.3125rem);
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
@@ -23,12 +25,12 @@
 .navbar-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 3.125rem;
   z-index: 1;
   width: auto;
   padding: 0;
   max-width: none;
-  align-items: center;
 }
 
 .nav-menu {
@@ -39,6 +41,7 @@
   text-align: center;
   position: relative;
   padding: 0.625rem 1.25rem;
+  margin: 0;
 }
 
 .nav-item {

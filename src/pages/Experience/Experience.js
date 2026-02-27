@@ -1,6 +1,10 @@
 import React from 'react';
 import { portfolioData } from '../../data';
 import './Experience.css';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import SectionIcon from '../../components/SectionIcon/SectionIcon';
+import SectionDescription from '../../components/SectionDescription/SectionDescription';
+import ExperienceSkills from '../../components/Experience/ExperienceSkills';
 
 const Experience = () => {
   // Sort jobs by date in descending order (most recent first)
@@ -20,24 +24,23 @@ const Experience = () => {
 
   return (
     <div className="experience-container" id="experience" data-testid="experience-section">
-      <h1 className="experience-heading">{portfolioData.headings.experience}</h1>
+      <SectionTitle className="experience-heading">{portfolioData.headings.experience}</SectionTitle>
       <div className="experience-list">
         {sortedJobs.map((job, index) => (
           <div className="experience-item" key={index}>
             <div className="experience-header">
-              <img src={job.logo} alt={job.companyName} className="experience-logo" loading="lazy" />
-              <div className="experience-details">
-                <h2>{job.companyName}</h2>
-                <h3>{job.jobTitle}</h3>
-                <p className="experience-date">{job.date}</p>
-                <p className="experience-location">{job.location}</p>
-              </div>
+              <SectionIcon src={job.logo} alt={job.companyName} className="experience-logo" />
+              <SectionDescription
+                title={job.companyName}
+                subtitle={job.jobTitle}
+                date={job.date}
+                location={job.location}
+                className="experience-details"
+                dateClassName="experience-date"
+                locationClassName="experience-location"
+              />
             </div>
-            <div className="experience-tech-stack">
-              {job.techStack.map((tech, techIndex) => (
-                <span key={techIndex} className="tech-bubble">{tech}</span>
-              ))}
-            </div>
+            <ExperienceSkills techStack={job.techStack} />
           </div>
         ))}
       </div>

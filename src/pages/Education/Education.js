@@ -1,6 +1,10 @@
 import React from 'react';
 import { portfolioData } from '../../data';
 import './Education.css';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import SectionIcon from '../../components/SectionIcon/SectionIcon';
+import SectionDescription from '../../components/SectionDescription/SectionDescription';
+import RelevantCoursework from '../../components/Education/RelevantCoursework';
 
 const Education = () => {
   // Sort degrees by date in descending order (most recent first)
@@ -20,26 +24,25 @@ const Education = () => {
 
   return (
     <div className="education-container" id="education" data-testid="education-section">
-      <h1 className="education-heading section-title-bubble">{portfolioData.education.title}</h1>
-      <div className="education-speech-bubble">
-        <h3>{portfolioData.education.coursesTitle}</h3>
-        <ul>
-          {portfolioData.education.courses.map((course, index) => (
-            <li key={index}>{course}</li>
-          ))}
-        </ul>
-      </div>
+      <SectionTitle className="education-heading section-title-bubble">{portfolioData.education.title}</SectionTitle>
+      <RelevantCoursework
+        title={portfolioData.education.coursesTitle}
+        courses={portfolioData.education.courses}
+      />
       <div className="education-list">
         {sortedDegrees.map((edu, index) => (
           <div className="education-item" key={index}>
             <div className="education-header">
-              <img src={edu.logo} alt={edu.institutionName} className="education-logo" loading="lazy" />
-              <div className="education-details">
-                <h2>{edu.institutionName}</h2>
-                <h3>{edu.degree}</h3>
-                <p className="education-date">{edu.date}</p>
-                <p className="education-location">{edu.location}</p>
-              </div>
+              <SectionIcon src={edu.logo} alt={edu.institutionName} className="education-logo" />
+              <SectionDescription
+                title={edu.institutionName}
+                subtitle={edu.degree}
+                date={edu.date}
+                location={edu.location}
+                className="education-details"
+                dateClassName="education-date"
+                locationClassName="education-location"
+              />
             </div>
             
           </div>
