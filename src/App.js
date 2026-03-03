@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { MotionConfig } from 'framer-motion';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar/Navbar';
 import About from './pages/About/About';
@@ -11,20 +12,27 @@ import { theme } from './theme';
 import trackEvent from './utils/analytics';
 
 function App() {
+  const [animationsEnabled, setAnimationsEnabled] = useState(true);
+
   useEffect(() => {
     document.body.style.background = `linear-gradient(to right, ${theme.colors.lavender}, ${theme.colors.lightBlue})`;
     trackEvent('Page View', { page: window.location.pathname });
   }, []);
 
   return (
-    <div className="App app-fade-in">
-      <Navbar />
-      <About />
-      <Projects />
-      <Experience />
-      <Education />
-      <AnalyticsAlert />
-    </div>
+    <MotionConfig reducedMotion={animationsEnabled ? 'never' : 'always'}>
+      <div className="App app-fade-in">
+        <Navbar
+          animationsEnabled={animationsEnabled}
+          onToggleAnimations={() => setAnimationsEnabled((prev) => !prev)}
+        />
+        <About animationsEnabled={animationsEnabled} />
+        <Projects />
+        <Experience />
+        <Education />
+        <AnalyticsAlert />
+      </div>
+    </MotionConfig>
   );
 }
 

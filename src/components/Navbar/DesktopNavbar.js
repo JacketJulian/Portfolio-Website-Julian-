@@ -6,7 +6,7 @@ import './DesktopNavbar.css';
 import trackEvent from '../../utils/analytics';
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 
-const DesktopNavbar = () => {
+const DesktopNavbar = ({ animationsEnabled, onToggleAnimations }) => {
   const isScrolled = useScroll();
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
   const [activeLink, setActiveLink] = useState('about');
@@ -17,11 +17,11 @@ const DesktopNavbar = () => {
   const targetPosition = useRef({ left: 0, width: 0, height: 0 });
   const currentPosition = useRef({ left: 0, width: 0, height: 0 });
   const animationFrameId = useRef(null);
-  const [isToggleOn, setIsToggleOn] = useState(false);
-
   const handleToggle = () => {
-    setIsToggleOn(!isToggleOn);
-  }
+    if (onToggleAnimations) {
+      onToggleAnimations();
+    }
+  };
 
   useEffect(() => {
     Events.scrollEvent.register('begin', function (to, element) {});
@@ -146,7 +146,7 @@ const DesktopNavbar = () => {
               </Link>
             </li>
           ))}
-          <ToggleSwitch isOn={isToggleOn} onToggle={handleToggle} />
+          <ToggleSwitch isOn={animationsEnabled} onToggle={handleToggle} />
         </ul>
       </div>
     </nav>

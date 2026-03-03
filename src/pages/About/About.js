@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DesktopAbout from './DesktopAbout';
 import MobileAbout from './MobileAbout';
 
-const About = () => {
+const About = ({ animationsEnabled }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
@@ -16,7 +16,9 @@ const About = () => {
     };
   }, []);
 
-  return isMobile ? <MobileAbout /> : <DesktopAbout />;
+  return isMobile
+    ? <MobileAbout animationsEnabled={animationsEnabled} />
+    : <DesktopAbout animationsEnabled={animationsEnabled} />;
 };
 
 export default About;

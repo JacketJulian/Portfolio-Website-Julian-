@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { portfolioData } from '../../data';
 import './MobileAbout.css';
 import ProfileImage from '../../components/ProfileImage/ProfileImage';
@@ -6,31 +7,87 @@ import AboutTextContent from '../../components/About/AboutTextContent';
 import ResumeButton from '../../components/About/ResumeButton';
 import { theme } from '../../theme';
 
-const MobileAbout = () => {
+const MobileAbout = ({ animationsEnabled }) => {
+  const aboutRef = useRef(null);
+  const isInViewValue = useInView(aboutRef, { amount: 0.35 });
+  const isInView = animationsEnabled ? isInViewValue : true;
+
+  const MotionDiv = animationsEnabled ? motion.div : 'div';
+
+  const profileVariants = {
+    in: { x: 0 },
+    out: { x: '-120%' },
+  };
+
+  const textVariants = {
+    in: { x: 0 },
+    out: { x: '120%' },
+  };
+
+  const buttonVariants = {
+    in: { x: 0 },
+    out: { x: '120%' },
+  };
+
   return (
     <div className="about-container" id="about" data-testid="about-section">
-      <div className="about-content">
-        <ProfileImage 
-          src={portfolioData.profileImage}
-          alt="Your Profile"
-          showStatus={!!portfolioData.about.status}
-          statusText={portfolioData.about.status}
-          containerStyle={{
-            backgroundColor: theme.colors.white,
-            border: `5px solid ${theme.colors.white}`,
-          }}
-          whileHoverRotation={10}
-        />
+      <div className="about-content" ref={aboutRef}>
+        <MotionDiv
+          {...(animationsEnabled
+            ? {
+                variants: profileVariants,
+                initial: 'out',
+                animate: isInView ? 'in' : 'out',
+                transition: { duration: isInView ? 0.7 : 0.4, ease: 'easeOut' },
+              }
+            : {})}
+        >
+          <ProfileImage 
+            src={portfolioData.profileImage}
+            alt="Your Profile"
+            showStatus={!!portfolioData.about.status}
+            statusText={portfolioData.about.status}
+            containerStyle={{
+              backgroundColor: theme.colors.white,
+              border: `5px solid ${theme.colors.white}`,
+            }}
+            whileHoverRotation={10}
+            animationsEnabled={animationsEnabled}
+          />
+        </MotionDiv>
         <div className="about-text-wrapper">
-          <AboutTextContent 
-            name={portfolioData.name}
-            title={portfolioData.title}
-            description={portfolioData.about.description}
-          />
-          <ResumeButton 
-            href={portfolioData.about.resumeLink}
-            text={portfolioData.about.downloadText}
-          />
+          <MotionDiv
+            {...(animationsEnabled
+              ? {
+                  variants: textVariants,
+                  initial: 'out',
+                  animate: isInView ? 'in' : 'out',
+                  transition: { duration: isInView ? 0.7 : 0.4, ease: 'easeOut', delay: isInView ? 0.15 : 0 },
+                }
+              : {})}
+          >
+            <AboutTextContent 
+              name={portfolioData.name}
+              title={portfolioData.title}
+              description={portfolioData.about.description}
+              animationsEnabled={animationsEnabled}
+            />
+          </MotionDiv>
+          <MotionDiv
+            {...(animationsEnabled
+              ? {
+                  variants: buttonVariants,
+                  initial: 'out',
+                  animate: isInView ? 'in' : 'out',
+                  transition: { duration: isInView ? 0.7 : 0.4, ease: 'easeOut', delay: isInView ? 0.35 : 0 },
+                }
+              : {})}
+          >
+            <ResumeButton 
+              href={portfolioData.about.resumeLink}
+              text={portfolioData.about.downloadText}
+            />
+          </MotionDiv>
         </div>
       </div>
     </div>

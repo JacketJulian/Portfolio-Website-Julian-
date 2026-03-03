@@ -10,14 +10,11 @@ import ProjectName from '../../components/Projects/ProjectName';
 import ProjectDescription from '../../components/Projects/ProjectDescription';
 
 const ProjectsPage = () => {
-  const [currentPage, setCurrentPage] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
   const [expandedBubbles, setExpandedBubbles] = useState(new Set());
-  const projectsPerPage = 3;
 
   const minSwipeDistance = 50;
 
@@ -34,23 +31,6 @@ const ProjectsPage = () => {
     textAlign: 'left',
   };
 
-  const totalPages = Math.ceil(portfolioData.projects.projects.length / projectsPerPage);
-
-  const handleNextPage = () => {
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages - 1));
-      setIsTransitioning(false);
-    }, 300);
-  };
-
-  const handlePrevPage = () => {
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentPage((prevPage) => Math.max(prevPage - 1, 0));
-      setIsTransitioning(false);
-    }, 300);
-  };
 
   const handleShowModal = (project) => {
     setSelectedProject(project);
@@ -65,7 +45,7 @@ const ProjectsPage = () => {
   const handleBubbleClick = (e, projectIndex) => {
     e.stopPropagation();
     const newExpandedBubbles = new Set(expandedBubbles);
-    const bubbleKey = `${currentPage}-${projectIndex}`;
+    const bubbleKey = `all-${projectIndex}`;
 
     if (newExpandedBubbles.has(bubbleKey)) {
       newExpandedBubbles.delete(bubbleKey);
@@ -91,66 +71,52 @@ const ProjectsPage = () => {
 
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
-
-    if (isLeftSwipe && currentPage < totalPages - 1) {
-      handleNextPage();
-    }
-    if (isRightSwipe && currentPage > 0) {
-      handlePrevPage();
-    }
   };
 
-  const startIndex = currentPage * projectsPerPage;
-  const endIndex = startIndex + projectsPerPage;
-  let currentProjects = portfolioData.projects.projects.slice(startIndex, endIndex);
-
-  if (currentProjects.length < projectsPerPage) {
-    const placeholders = Array(projectsPerPage - currentProjects.length).fill(null);
-    currentProjects = [...currentProjects, ...placeholders];
-  }
+  const renderProjectsGrid = (projects) => (
+    projects.map((project, index) => (
+      project ? (
+        <div
+          className="project-card"
+          key={index}
+        >
+          <ProjectImage
+            src={project.image}
+            alt={project.title}
+            onClick={() => handleCardClick(project)}
+          />
+          <ProjectName
+            title={project.title}
+            style={titleStyle}
+            onClick={() => handleCardClick(project)}
+          />
+          <ProjectDescription
+            description={project.description}
+            style={descriptionStyle}
+            isExpanded={expandedBubbles.has(`all-${index}`)}
+            onClick={(e) => handleBubbleClick(e, index)}
+          />
+        </div>
+      ) : (
+        <div
+          className="project-card-placeholder"
+          key={index}
+        >
+          <div className="placeholder-image"></div>
+          <div className="placeholder-title"></div>
+          <div className="placeholder-description"></div>
+        </div>
+      )
+    ))
+  );
 
   return (
     <div className="projects-container" id="projects" data-testid="projects-section">
       <SectionTitle className="projects-heading section-title-bubble">{portfolioData.projects.title}</SectionTitle>
       <div className="projects-grid-container" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
-        <div className={`projects-grid ${isTransitioning ? 'transitioning' : ''}`}>
-          {currentProjects.map((project, index) => (
-            project ? (
-              <div className="project-card" key={index}>
-                <ProjectImage
-                  src={project.image}
-                  alt={project.title}
-                  onClick={() => handleCardClick(project)}
-                />
-                <ProjectName
-                  title={project.title}
-                  style={titleStyle}
-                  onClick={() => handleCardClick(project)}
-                />
-                <ProjectDescription
-                  description={project.description}
-                  style={descriptionStyle}
-                  isExpanded={expandedBubbles.has(`${currentPage}-${index}`)}
-                  onClick={(e) => handleBubbleClick(e, index)}
-                />
-              </div>
-            ) : (
-              <div className="project-card-placeholder" key={index}>
-                <div className="placeholder-image"></div>
-                <div className="placeholder-title"></div>
-                <div className="placeholder-description"></div>
-              </div>
-            )
-          ))}
+        <div className="projects-grid">
+          {renderProjectsGrid(portfolioData.projects.projects)}
         </div>
-      </div>
-      <div className="pagination-container">
-        <button onClick={handlePrevPage} disabled={currentPage === 0} className="pagination-button">{'<'}</button>
-        <span className="page-indicator">{`Page ${currentPage + 1} of ${totalPages}`}</span>
-        <button onClick={handleNextPage} disabled={currentPage === totalPages - 1} className="pagination-button">{'>'}</button>
       </div>
 
       <ModalWindow show={showModal} handleClose={handleCloseModal} title={selectedProject ? selectedProject.title : ''}>

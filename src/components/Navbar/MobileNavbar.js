@@ -46,6 +46,8 @@ const MobileNavbar = () => {
                 smooth={true}
                 duration={500}
                 className="mobile-nav-links"
+                spy={true}
+                hashSpy={true}
                 onClick={() => handleLinkClick(link.name)} // Close menu on click
               >
                 {link.name}

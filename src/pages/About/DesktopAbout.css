@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6.25rem 1.875rem;
   height: 100vh;
   position: relative;
   z-index: 1;
@@ -61,6 +60,7 @@
 .about-text-content p {
   font-size: 1.25rem;
   line-height: 1.6;
+  padding-bottom: 0.4rem;
 }
 
 .about-buttons {

@@ -10,7 +10,8 @@ const ProfileImage = ({
   showStatus = false, 
   statusText = "",
   containerStyle = {},
-  whileHoverRotation = 10
+  whileHoverRotation = 10,
+  animationsEnabled = true
 }) => {
   const [isStatusExpanded, setIsStatusExpanded] = useState(true);
   const [currentEmoji, setCurrentEmoji] = useState(DEFAULT_EMOJI);
@@ -33,12 +34,18 @@ const ProfileImage = ({
     }
   };
 
+  const MotionDiv = animationsEnabled ? motion.div : 'div';
+
   return (
-    <motion.div 
+    <MotionDiv 
       className="about-image-placeholder" 
       style={containerStyle}
-      whileHover={{ rotate: whileHoverRotation }}
-      transition={{ type: "tween", duration: 0.0001, ease: "easeInOut" }}
+      {...(animationsEnabled
+        ? {
+            whileHover: { rotate: whileHoverRotation },
+            transition: { type: "tween", duration: 0.0001, ease: "easeInOut" }
+          }
+        : {})}
     >
       <img src={src} alt={alt} loading="lazy" />
       {showStatus && statusText && (
@@ -56,7 +63,7 @@ const ProfileImage = ({
           <span className="status-text">{statusText}</span>
         </div>
       )}
-    </motion.div>
+    </MotionDiv>
   );
 };
 
