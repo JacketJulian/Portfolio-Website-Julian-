@@ -16,8 +16,6 @@ const ProjectsPage = () => {
   const [touchEnd, setTouchEnd] = useState(null);
   const [expandedBubbles, setExpandedBubbles] = useState(new Set());
 
-  const minSwipeDistance = 50;
-
   const titleStyle = {
     fontWeight: 'bold',
   };
