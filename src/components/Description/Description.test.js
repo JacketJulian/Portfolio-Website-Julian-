@@ -57,9 +57,9 @@ describe('Description Component', () => {
   });
 
   test('renders as paragraph element', () => {
-    const { container } = render(<Description>Paragraph test</Description>);
-    const paragraph = container.querySelector('p');
+    render(<Description>Paragraph test</Description>);
+    const paragraph = screen.getByText('Paragraph test');
     expect(paragraph).toBeInTheDocument();
-    expect(paragraph).toHaveTextContent('Paragraph test');
+    expect(paragraph.tagName).toBe('P');
   });
 });

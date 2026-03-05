@@ -8,16 +8,16 @@ export const portfolioData = {
       url: "about"
     },
     {
-      name: "Projects",
-      url: "projects"
-    },
-    {
       name: "Experience",
       url: "experience"
     },
     {
       name: "Education",
       url: "education"
+    },
+    {
+      name: "Projects",
+      url: "projects"
     }
   ],
   about: {

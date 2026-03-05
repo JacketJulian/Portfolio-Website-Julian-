@@ -27,10 +27,10 @@ function App() {
           onToggleAnimations={() => setAnimationsEnabled((prev) => !prev)}
         />
         <About animationsEnabled={animationsEnabled} />
-        <Projects />
         <Experience />
         <Education />
         <AnalyticsAlert />
+        <Projects />
         <Footer />
       </div>
     </MotionConfig>
