@@ -7,6 +7,7 @@ import Projects from './pages/Projects/Projects';
 import Experience from './pages/Experience/Experience';
 import Education from './pages/Education/Education';
 import AnalyticsAlert from './components/AnalyticsAlert/AnalyticsAlert';
+import Footer from './components/Footer/Footer';
 import './App.css';
 import trackEvent from './utils/analytics';
 
@@ -30,6 +31,7 @@ function App() {
         <Experience />
         <Education />
         <AnalyticsAlert />
+        <Footer />
       </div>
     </MotionConfig>
   );

@@ -102,6 +102,7 @@
     right: auto;
     max-width: 11rem;
     transform: none;
+    transform-origin: left top;
   }
 
   .experience-list {
