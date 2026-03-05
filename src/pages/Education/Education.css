@@ -51,8 +51,9 @@
 
 .education-heading {
   position: absolute;
-  top: 1rem;
-  right: 20rem;
+  top: 9rem;
+  left: calc(50% - 34rem);
+  right: auto;
   z-index: 2;
   font-size: 0.875rem;
   font-weight: 600;
@@ -60,8 +61,8 @@
   color: #fff;
   padding: 0.375rem 0.625rem;
   border-radius: 1.25rem;
-  transform: rotate(45deg);
-  transform-origin: left center;
+  transform: rotate(-45deg);
+  transform-origin: left top;
   white-space: nowrap;
   max-width: 14rem;
   overflow: hidden;
@@ -123,10 +124,10 @@
   .education-heading {
     font-size: 0.75rem;
     top: 0.75rem;
-    left: auto;
-    right: 0.5rem;
+    left: 0.5rem;
+    right: auto;
     max-width: 11rem;
-    transform: rotate(0deg);
+    transform: none;
   }
 
   .education-speech-bubble {
