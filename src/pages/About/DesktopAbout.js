@@ -27,7 +27,7 @@ const DesktopAbout = ({ animationsEnabled }) => {
 
   const resumeVariants = {
     in: { x: 0 },
-    out: { x: '120%' },
+    out: { x: '140%' },
   };
 
   const socialVariants = {
@@ -81,28 +81,13 @@ const DesktopAbout = ({ animationsEnabled }) => {
           </MotionDiv>
           <div className="about-buttons">
             <MotionDiv
-              {...(animationsEnabled
-                ? {
-                    variants: resumeVariants,
-                    initial: 'out',
-                    animate: isInView ? 'in' : 'out',
-                    transition: { duration: isInView ? 0.7 : 0.4, ease: 'easeOut', delay: isInView ? 0.25 : 0 },
-                  }
-                : {})}
-            >
-              <ResumeButton 
-                href={portfolioData.about.resumeLink}
-                text={portfolioData.about.downloadText}
-              />
-            </MotionDiv>
-            <MotionDiv
               className="social-links-about"
               {...(animationsEnabled
                 ? {
                     variants: socialVariants,
                     initial: 'out',
                     animate: isInView ? 'in' : 'out',
-                    transition: { duration: isInView ? 0.7 : 0.4, ease: 'easeOut', delay: isInView ? 0.55 : 0 },
+                    transition: { duration: isInView ? 0.7 : 0.4, ease: 'easeOut', delay: isInView ? 0.15 : 0 },
                   }
                 : {})}
             >
@@ -113,6 +98,21 @@ const DesktopAbout = ({ animationsEnabled }) => {
                   name={link.name}
                 />
               ))}
+            </MotionDiv>
+            <MotionDiv
+              {...(animationsEnabled
+                ? {
+                    variants: resumeVariants,
+                    initial: 'out',
+                    animate: isInView ? 'in' : 'out',
+                    transition: { duration: isInView ? 0.7 : 0.4, ease: 'easeOut', delay: isInView ? 0.20 : 0 },
+                  }
+                : {})}
+            >
+              <ResumeButton 
+                href={portfolioData.about.resumeLink}
+                text={portfolioData.about.downloadText}
+              />
             </MotionDiv>
           </div>
         </div>

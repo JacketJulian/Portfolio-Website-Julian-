@@ -15,7 +15,7 @@ function App() {
   const [animationsEnabled, setAnimationsEnabled] = useState(true);
 
   useEffect(() => {
-    document.body.style.background = `linear-gradient(to right, ${theme.colors.lavender}, ${theme.colors.lightBlue})`;
+    document.body.style.background = '#f5f5f7';
     trackEvent('Page View', { page: window.location.pathname });
   }, []);
 

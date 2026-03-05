@@ -5,6 +5,7 @@
   align-items: center;
   position: relative;
   min-height: 50vh;
+  border-bottom: 0.8rem solid #fff;
 }
 
 .education-speech-bubble {
