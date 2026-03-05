@@ -21,9 +21,9 @@
 }
 
 .projects-grid-container {
-  min-height: 52vh;
+  min-height: 70vh;
   width: 100%;
-  max-height: 52vh;
+  max-height: 70vh;
   overflow-x: auto;
   overflow-y: hidden;
   max-width: 62.5rem;

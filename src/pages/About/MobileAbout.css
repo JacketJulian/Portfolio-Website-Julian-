@@ -24,7 +24,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Align items to the start */
-  margin-left: 3.125rem; /* Space between image and text */
+  margin-left: 0; /* Space between image and text */
 }
 
 .about-text-content {
@@ -194,7 +194,7 @@
     text-align: center; /* Center text in bubble */
     border-bottom-left-radius: 1.25rem; /* Make all corners rounded */
     border-top-right-radius: 0.3125rem; /* Sharper corner for the tail side on right */
-    max-width: 90%; /* Ensure it renders entirely on mobile */
+    max-width: 100%; /* Ensure it renders entirely on mobile */
     box-sizing: border-box; /* Include padding in width calculation */
   }
 }
