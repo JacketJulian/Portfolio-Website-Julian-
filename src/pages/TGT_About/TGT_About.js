@@ -1,6 +1,6 @@
 import React from 'react';
 import './TGT_About.css';
-import TGT_Button from '../../components/tgt_button/tgt_button';
+import TgtButton from '../../components/tgt_button/tgt_button';
 
 const TGT_About = () => {
   return (
@@ -14,7 +14,7 @@ const TGT_About = () => {
       >
         <h1 className="tgt-about-title">Julian Mangual</h1>
         <p className="tgt-about-text">Software Engineer | Data | Infrastructure</p>
-        <TGT_Button variant="secondary">Download Resume</TGT_Button>
+        <TgtButton variant="secondary">Download Resume</TgtButton>
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import './TGT_Project.css';
-import TGT_Button from '../tgt_button/tgt_button';
+import TgtButton from '../tgt_button/tgt_button';
 
 const TGT_Project = ({
   title = 'Target Project',
@@ -20,7 +20,7 @@ const TGT_Project = ({
           <h3 className="tgt-project-title">{title}</h3>
           <p className="tgt-project-description">{description}</p>
         </div>
-        <TGT_Button className="tgt-project-button">View Project</TGT_Button>
+        <TgtButton className="tgt-project-button">View Project</TgtButton>
         </div>
       </div>
     </div>

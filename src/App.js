@@ -8,14 +8,14 @@ import Experience from './pages/Experience/Experience';
 import Education from './pages/Education/Education';
 import AnalyticsAlert from './components/AnalyticsAlert/AnalyticsAlert';
 import Footer from './components/Footer/Footer';
-import TGT_Header from './components/TGT_Header/TGT_Header';
-import TGT_Subheader from './components/TGT_Subheader/TGT_Subheader';
-import TGT_MobileSubheader from './components/TGT_Subheader/TGT_MobileSubheader';
-import TGT_About from './pages/TGT_About/TGT_About';
-import TGT_Projects from './pages/TGT_Projects/TGT_Projects';
-import TGT_Footer from './pages/TGT_Footer/TGT_Footer';
-import TGT_Experience from './pages/TGT_Experience/TGT_Experience';
-import TGT_Education from './pages/TGT_Education/TGT_Education';
+import TgtHeader from './components/TGT_Header/TGT_Header';
+import TgtSubheader from './components/TGT_Subheader/TGT_Subheader';
+import TgtMobileSubheader from './components/TGT_Subheader/TGT_MobileSubheader';
+import TgtAbout from './pages/TGT_About/TGT_About';
+import TgtProjects from './pages/TGT_Projects/TGT_Projects';
+import TgtFooter from './pages/TGT_Footer/TGT_Footer';
+import TgtExperience from './pages/TGT_Experience/TGT_Experience';
+import TgtEducation from './pages/TGT_Education/TGT_Education';
 import './App.css';
 import trackEvent from './utils/analytics';
 
@@ -88,17 +88,17 @@ function App() {
         )}
         {theme === 'target' && (
           <>
-            {showTgtHeader && <TGT_Header />}
+            {showTgtHeader && <TgtHeader />}
             {isMobileView ? (
-              <TGT_MobileSubheader onLogoClick={() => setTheme('apple')} />
+              <TgtMobileSubheader onLogoClick={() => setTheme('apple')} />
             ) : (
-              <TGT_Subheader onLogoClick={() => setTheme('apple')} />
+              <TgtSubheader onLogoClick={() => setTheme('apple')} />
             )}
-            <TGT_About />
-            <TGT_Projects />
-            <TGT_Experience />
-            <TGT_Education />
-            <TGT_Footer />
+            <TgtAbout />
+            <TgtProjects />
+            <TgtExperience />
+            <TgtEducation />
+            <TgtFooter />
           </>
         )}
       </div>
