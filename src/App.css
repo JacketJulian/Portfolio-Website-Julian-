@@ -4,3 +4,33 @@
   padding: 0;
   font-family: 'Encode Sans Expanded', sans-serif;
 }
+
+.App {
+  position: relative;
+  overflow: visible;
+}
+
+.App.theme-wipe-active {
+  overflow: hidden;
+}
+
+.theme-wipe {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  z-index: 100;
+  pointer-events: none;
+  animation: themeWipe 0.45s ease-in-out;
+}
+
+@keyframes themeWipe {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

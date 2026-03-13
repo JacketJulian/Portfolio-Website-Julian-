@@ -1,0 +1,108 @@
+.tgt-subheader {
+  width: 100%;
+  background-color: #fff;
+  padding: 0.75rem 2rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1049;
+  height: 5rem;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px -1px 2px, rgba(0, 0, 0, 0.04) 0px 1px 2px, rgba(0, 0, 0, 0.04) 0px 3px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tgt-subheader-inner {
+  display: flex;
+  width: 100%;
+  max-width: 1350px;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.tgt-search-container {
+  background-color: #F7F7F7;
+  min-width: 48%;
+  border-radius: 5rem;
+  padding: 0.65rem 0.75rem;
+  font-family: 'Helvetica Neue' ;
+  color: #666666;
+  font-weight: 500;
+}
+
+.tgt-subheader-categories {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.tgt-subheader-logo {
+  width: 45px;
+  height: 45px;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.tgt-subheader-logo-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.tgt-subheader-category {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  transition: background-color 0.2s ease;
+}
+
+.tgt-subheader-caret {
+  flex: 0 0 auto;
+  display: block;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.tgt-subheader-category:hover {
+  background-color: #f2f2f2;
+}
+
+.tgt-subheader-category:hover .tgt-subheader-caret {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .tgt-subheader {
+    height: auto;
+    min-height: 5rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .tgt-subheader-inner {
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .tgt-search-container {
+    width: 100%;
+    min-width: 0;
+    font-size: 0.9rem;
+  }
+}
+

@@ -18,7 +18,7 @@ const CloseIcon = () => (
   </svg>
 );
 
-const MobileNavbar = () => {
+const MobileNavbar = ({ theme, onThemeChange }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -38,6 +38,20 @@ const MobileNavbar = () => {
         </div>
       </div>
       <div className={`mobile-nav-menu ${isOpen ? 'active' : ''}`}>
+        <div className="mobile-theme-toggle">
+          <button
+            type="button"
+            className={`theme-dot theme-dot-apple${theme === 'apple' ? ' active' : ''}`}
+            onClick={() => onThemeChange && onThemeChange('apple')}
+            aria-label="Switch to Apple theme"
+          />
+          <button
+            type="button"
+            className={`theme-dot theme-dot-target${theme === 'target' ? ' active' : ''}`}
+            onClick={() => onThemeChange && onThemeChange('target')}
+            aria-label="Switch to Target theme"
+          />
+        </div>
         <ul className="mobile-nav-items">
           {portfolioData.navLinks.map((link, index) => (
             <li className="mobile-nav-item" key={index}>

@@ -48,6 +48,37 @@
   position: relative;
 }
 
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.75rem;
+}
+
+.theme-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+.theme-dot-apple {
+  background-color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.theme-dot-target {
+  background-color: #e50914;
+  border-color: rgba(229, 9, 20, 0.4);
+}
+
+.theme-dot.active {
+  box-shadow: 0 0 0.6rem rgba(34, 148, 251, 0.6);
+}
+
 .nav-links {
   color: #111;
   display: flex;

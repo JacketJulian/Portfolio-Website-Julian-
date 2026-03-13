@@ -6,7 +6,7 @@ import './DesktopNavbar.css';
 import trackEvent from '../../utils/analytics';
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 
-const DesktopNavbar = ({ animationsEnabled, onToggleAnimations }) => {
+const DesktopNavbar = ({ animationsEnabled, onToggleAnimations, theme, onThemeChange }) => {
   const isScrolled = useScroll();
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
   const [activeLink, setActiveLink] = useState('about');
@@ -146,6 +146,20 @@ const DesktopNavbar = ({ animationsEnabled, onToggleAnimations }) => {
               </Link>
             </li>
           ))}
+          <li className="nav-item theme-toggle">
+            <button
+              type="button"
+              className={`theme-dot theme-dot-apple${theme === 'apple' ? ' active' : ''}`}
+              onClick={() => onThemeChange && onThemeChange('apple')}
+              aria-label="Switch to Apple theme"
+            />
+            <button
+              type="button"
+              className={`theme-dot theme-dot-target${theme === 'target' ? ' active' : ''}`}
+              onClick={() => onThemeChange && onThemeChange('target')}
+              aria-label="Switch to Target theme"
+            />
+          </li>
           <ToggleSwitch isOn={animationsEnabled} onToggle={handleToggle} />
         </ul>
       </div>

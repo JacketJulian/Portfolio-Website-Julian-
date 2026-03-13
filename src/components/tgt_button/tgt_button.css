@@ -1,0 +1,30 @@
+.tgt-button {
+  background-color: rgb(204, 0, 0);
+  font: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+  color: white;
+  border: 1px solid rgb(204, 0, 0);
+  border-radius: 999px;
+  padding: 0.25rem 0.5rem;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.tgt-button:hover {
+  background-color: rgb(170, 0, 0);
+}
+
+.tgt-button--secondary {
+  background-color: white;
+  font-size: 17px;
+  font: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+  font-weight: 350;
+  padding: 0.40rem 0.75rem;
+  color:black;
+  border: 0.5px solid black;
+}
+
+.tgt-button--secondary:hover {
+  background-color: rgb(236, 235, 235);
+  text-decoration: underline;
+}

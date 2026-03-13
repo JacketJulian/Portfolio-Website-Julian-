@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DesktopNavbar from './DesktopNavbar';
 import MobileNavbar from './MobileNavbar';
 
-const Navbar = ({ animationsEnabled, onToggleAnimations }) => {
+const Navbar = ({ animationsEnabled, onToggleAnimations, theme, onThemeChange }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
@@ -17,8 +17,8 @@ const Navbar = ({ animationsEnabled, onToggleAnimations }) => {
   }, []);
 
   return isMobile
-    ? <MobileNavbar />
-    : <DesktopNavbar animationsEnabled={animationsEnabled} onToggleAnimations={onToggleAnimations} />;
+    ? <MobileNavbar theme={theme} onThemeChange={onThemeChange} />
+    : <DesktopNavbar animationsEnabled={animationsEnabled} onToggleAnimations={onToggleAnimations} theme={theme} onThemeChange={onThemeChange} />;
 };
 
 export default Navbar;
