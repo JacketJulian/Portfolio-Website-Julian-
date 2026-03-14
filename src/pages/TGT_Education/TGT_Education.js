@@ -4,7 +4,7 @@ import { portfolioData } from '../../data';
 
 const TGT_Education = () => {
   return (
-    <section className="tgt-education" data-testid="tgt-education">
+    <section className="tgt-education" id="education" data-testid="tgt-education">
       <div className="tgt-education-inner">
         <div className="tgt-education-row">
           {portfolioData.education.degrees.map((degree) => (

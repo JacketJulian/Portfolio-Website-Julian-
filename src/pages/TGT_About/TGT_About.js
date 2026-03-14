@@ -4,7 +4,7 @@ import TgtButton from '../../components/tgt_button/tgt_button';
 
 const TGT_About = () => {
   return (
-    <section className="tgt-about" data-testid="tgt-about">
+    <section className="tgt-about" id="about" data-testid="tgt-about">
       <div
         className="tgt-about-inner"
         style={{

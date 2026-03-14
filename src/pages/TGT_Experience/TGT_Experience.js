@@ -10,7 +10,7 @@ const TGT_Experience = () => {
   };
 
   return (
-    <section className="tgt-experience" data-testid="tgt-experience">
+    <section className="tgt-experience" id="experience" data-testid="tgt-experience">
       <div className="tgt-experience-inner">
         <h2 className="tgt-experience-title">Places I've worked at</h2>
         <div className="tgt-experience-row">

@@ -1,7 +1,22 @@
 import React from 'react';
 import './TGT_Subheader.css';
 
-const TGT_Subheader = ({ text = 'Target Theme Subheader', categories = ['About', 'Projects', 'Experience'], onLogoClick }) => {
+const TGT_Subheader = ({ text = 'Welcome to my portfolio!', categories = ['About', 'Projects', 'Experience', 'Education'], onLogoClick }) => {
+  const scrollToSection = (category) => {
+    const sectionId = category.toLowerCase();
+    const section = document.getElementById(sectionId);
+
+    if (!section) return;
+
+    const offset = 130;
+    const top = section.getBoundingClientRect().top + window.scrollY - offset;
+
+    window.scrollTo({
+      top,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <div className="tgt-subheader" data-testid="tgt-subheader">
       <div className="tgt-subheader-inner">
@@ -19,7 +34,13 @@ const TGT_Subheader = ({ text = 'Target Theme Subheader', categories = ['About',
         </button>
         <div className="tgt-subheader-categories">
         {categories.map((cat) => (
-          <span key={cat} className="tgt-subheader-category">
+          <button
+            key={cat}
+            type="button"
+            className="tgt-subheader-category"
+            onClick={() => scrollToSection(cat)}
+            aria-label={`Scroll to ${cat}`}
+          >
             <span>{cat}</span>
             <svg
               className="tgt-subheader-caret"
@@ -32,11 +53,11 @@ const TGT_Subheader = ({ text = 'Target Theme Subheader', categories = ['About',
             >
               <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </span>
+          </button>
         ))}
         </div>
         <div className="tgt-search-container">
-          Welcome to my portfolio!
+          {text}
         </div>
       </div>
     </div>

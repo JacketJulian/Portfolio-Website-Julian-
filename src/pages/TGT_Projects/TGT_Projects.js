@@ -5,7 +5,7 @@ import TgtProject from '../../components/TGT_Project/TGT_Project';
 
 const TGT_Projects = () => {
   return (
-    <section className="tgt-projects" data-testid="tgt-projects">
+    <section className="tgt-projects" id="projects" data-testid="tgt-projects">
       <div className="tgt-projects-inner">
         <h2 className="tgt-projects-title">Some of my Projects</h2>
         <div className="tgt-projects-list">
