@@ -112,7 +112,7 @@
 
 @media (max-width: 768px) {
   .tgt-project-full {
-    padding: 1rem 0.75rem 2rem;
+    padding: 6.5rem 0.75rem 2rem;
   }
 
   .tgt-project-full-inner {
@@ -136,5 +136,20 @@
 
   .tgt-project-full-title {
     font-size: 1.4rem;
+  }
+
+  .tgt-project-full-actions {
+    width: 100%;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+
+  .tgt-project-full-link {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0.55rem 0.65rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
