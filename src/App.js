@@ -42,6 +42,7 @@ function App() {
     const queryString = params.toString();
     window.history.pushState({}, '', queryString ? `${window.location.pathname}?${queryString}` : window.location.pathname);
     setTargetProjectParam(params.get('project') || '');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const clearProjectQueryParam = () => {
