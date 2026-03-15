@@ -16,6 +16,8 @@ import TgtProjects from './pages/TGT_Projects/TGT_Projects';
 import TgtFooter from './pages/TGT_Footer/TGT_Footer';
 import TgtExperience from './pages/TGT_Experience/TGT_Experience';
 import TgtEducation from './pages/TGT_Education/TGT_Education';
+import TgtProjectFull from './pages/TGT_Project_Full/TGT_Project_Full';
+import { portfolioData } from './data';
 import './App.css';
 import trackEvent from './utils/analytics';
 
@@ -25,7 +27,34 @@ function App() {
   const [showTgtHeader, setShowTgtHeader] = useState(true);
   const [isWiping, setIsWiping] = useState(false);
   const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
+  const [targetProjectParam, setTargetProjectParam] = useState(() => new URLSearchParams(window.location.search).get('project') || '');
   const isFirstThemeChange = useRef(true);
+
+  const toProjectParam = (value) => value
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-');
+
+  const setProjectQueryParam = (title) => {
+    const params = new URLSearchParams(window.location.search);
+    params.set('project', toProjectParam(title));
+    const queryString = params.toString();
+    window.history.pushState({}, '', queryString ? `${window.location.pathname}?${queryString}` : window.location.pathname);
+    setTargetProjectParam(params.get('project') || '');
+  };
+
+  const clearProjectQueryParam = () => {
+    const params = new URLSearchParams(window.location.search);
+    params.delete('project');
+    const queryString = params.toString();
+    window.history.pushState({}, '', queryString ? `${window.location.pathname}?${queryString}` : window.location.pathname);
+    setTargetProjectParam('');
+  };
+
+  const selectedTargetProject = portfolioData.projects.projects.find(
+    (project) => toProjectParam(project.title) === targetProjectParam,
+  );
 
   useEffect(() => {
     document.body.style.background = '#f5f5f7';
@@ -64,6 +93,16 @@ function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  useEffect(() => {
+    const handlePopState = () => {
+      const params = new URLSearchParams(window.location.search);
+      setTargetProjectParam(params.get('project') || '');
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   return (
     <MotionConfig reducedMotion={animationsEnabled ? 'never' : 'always'}>
       <div className={`App app-fade-in ${isWiping ? 'theme-wipe-active' : ''}`}>
@@ -94,11 +133,20 @@ function App() {
             ) : (
               <TgtSubheader onLogoClick={() => setTheme('apple')} />
             )}
-            <TgtAbout />
-            <TgtProjects />
-            <TgtExperience />
-            <TgtEducation />
-            <TgtFooter />
+            {selectedTargetProject ? (
+              <>
+                <TgtProjectFull project={selectedTargetProject} onBack={clearProjectQueryParam} />
+                <TgtFooter />
+              </>
+            ) : (
+              <>
+                <TgtAbout />
+                <TgtProjects onViewProject={setProjectQueryParam} />
+                <TgtExperience />
+                <TgtEducation />
+                <TgtFooter />
+              </>
+            )}
           </>
         )}
       </div>

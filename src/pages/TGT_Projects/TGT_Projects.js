@@ -3,7 +3,7 @@ import './TGT_Projects.css';
 import { portfolioData } from '../../data';
 import TgtProject from '../../components/TGT_Project/TGT_Project';
 
-const TGT_Projects = () => {
+const TGT_Projects = ({ onViewProject }) => {
   return (
     <section className="tgt-projects" id="projects" data-testid="tgt-projects">
       <div className="tgt-projects-inner">
@@ -15,6 +15,7 @@ const TGT_Projects = () => {
               title={project.title}
               description={project.description}
               imageUrl={project.image}
+              onViewProject={() => onViewProject && onViewProject(project.title)}
             />
           ))}
         </div>

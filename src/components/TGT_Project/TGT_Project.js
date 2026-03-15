@@ -6,6 +6,7 @@ const TGT_Project = ({
   title = 'Target Project',
   description = 'Placeholder project description.',
   imageUrl = '',
+  onViewProject,
 }) => {
   return (
     <div className="tgt-project" data-testid="tgt-project">
@@ -20,7 +21,7 @@ const TGT_Project = ({
           <h3 className="tgt-project-title">{title}</h3>
           <p className="tgt-project-description">{description}</p>
         </div>
-        <TgtButton className="tgt-project-button">View Project</TgtButton>
+        <TgtButton className="tgt-project-button" onClick={onViewProject}>View Project</TgtButton>
         </div>
       </div>
     </div>
